@@ -2,6 +2,8 @@ import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import authRoutes from "./routes/auth.routes.js";
+import subjectRoutes from "./routes/subject.routes.js";
+import teacherRoutes from "./routes/teacher.routes.js";
 
 const app = express();
 
@@ -28,5 +30,12 @@ app.get("/", (req, res) => {
 
 app.use("/api/auth", authRoutes);
 
+//Subject Routes
+app.use("/api/subjects", subjectRoutes);
+
+//Teacher Routes
+
+
+app.use("/api/teachers", teacherRoutes);
 
 export default app;

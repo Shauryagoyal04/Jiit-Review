@@ -14,12 +14,6 @@ const teacherReviewSchema = new mongoose.Schema(
       required: true
     },
 
-    campus: {
-      type: String,
-      enum: ["62", "128"],
-      required: true
-    },
-
     ratings: {
       lateEntry: { type: Number, min: 1, max: 5, required: true },
       taMarks: { type: Number, min: 1, max: 5, required: true },

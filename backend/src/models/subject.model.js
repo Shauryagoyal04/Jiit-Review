@@ -10,9 +10,15 @@ const subjectSchema = new mongoose.Schema(
 
     department: {
       type: String,
-      required: true
+      required: true,
+      trim: true
     },
-
+    semester: {
+      type: Number,
+      required: true,
+      min: 1,
+      max: 8
+    },
     campus: {
       type: String,
       enum: ["62", "128", "both"],

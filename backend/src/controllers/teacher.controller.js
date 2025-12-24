@@ -1,0 +1,127 @@
+import { Teacher } from "../models/teacher.model.js";
+import { TeacherReview } from "../models/teacherReview.model.js";
+import ApiError from "../utils/ApiError.js";
+import { ApiResponse } from "../utils/ApiResponse.js";
+import { asyncHandler } from "../utils/asyncHandler.js";
+
+/* =========================
+   GET ALL TEACHERS (PUBLIC)
+========================= */
+export const getAllTeachers = asyncHandler(async (req, res) => {
+  const teachers = await Teacher.find().sort({ name: 1 });
+
+  return res.json(
+    new ApiResponse(200, teachers, "Teachers fetched successfully")
+  );
+});
+
+/* =========================
+   GET TEACHER REVIEWS (🔒)
+========================= */
+export const getTeacherReviews = asyncHandler(async (req, res) => {
+  const teacherId = req.params.id;
+
+  const teacher = await Teacher.findById(teacherId);
+  if (!teacher) {
+    throw new ApiError(404, "Teacher not found");
+  }
+
+  const reviews = await TeacherReview.find({ teacherId })
+    .select("-userId") // 🔐 anonymity
+    .sort({ createdAt: -1 });
+
+  let avgRatings = null;
+  let overallRating = null;
+
+  if (reviews.length > 0) {
+    const totals = {
+      lateEntry: 0,
+      taMarks: 0,
+      clarity: 0,
+      attendance: 0
+    };
+
+    reviews.forEach((r) => {
+      totals.lateEntry += r.ratings.lateEntry;
+      totals.taMarks += r.ratings.taMarks;
+      totals.clarity += r.ratings.clarity;
+      totals.attendance += r.ratings.attendance;
+    });
+
+    avgRatings = {
+      lateEntry: Number((totals.lateEntry / reviews.length).toFixed(1)),
+      taMarks: Number((totals.taMarks / reviews.length).toFixed(1)),
+      clarity: Number((totals.clarity / reviews.length).toFixed(1)),
+      attendance: Number((totals.attendance / reviews.length).toFixed(1))
+    };
+
+    overallRating = Number(
+      (
+        (avgRatings.lateEntry +
+          avgRatings.taMarks +
+          avgRatings.clarity +
+          avgRatings.attendance) / 4
+      ).toFixed(1)
+    );
+  }
+
+  return res.json(
+    new ApiResponse(
+      200,
+      {
+        reviewsCount: reviews.length,
+        avgRatings,
+        overallRating,
+        reviews
+      },
+      "Teacher reviews fetched successfully"
+    )
+  );
+});
+
+/* =========================
+   ADD TEACHER REVIEW (🔒)
+========================= */
+export const addTeacherReview = asyncHandler(async (req, res) => {
+  const teacherId = req.params.id;
+  const userId = req.user._id;
+
+  const { lateEntry, taMarks, clarity, attendance, textReview } = req.body;
+
+  // ✅ Correct rating validation
+  const ratings = [lateEntry, taMarks, clarity, attendance];
+  if (ratings.some((r) => r < 1 || r > 5)) {
+    throw new ApiError(400, "Ratings must be between 1 and 5");
+  }
+
+  const teacher = await Teacher.findById(teacherId);
+  if (!teacher) {
+    throw new ApiError(404, "Teacher not found");
+  }
+
+  // 🚫 Prevent duplicate review
+  const existingReview = await TeacherReview.findOne({
+    teacherId,
+    userId
+  });
+
+  if (existingReview) {
+    throw new ApiError(409, "You have already reviewed this teacher");
+  }
+
+  const review = await TeacherReview.create({
+    teacherId,
+    userId,
+    ratings: {
+      lateEntry,
+      taMarks,
+      clarity,
+      attendance
+    },
+    textReview
+  });
+
+  return res.status(201).json(
+    new ApiResponse(201, review, "Teacher review added successfully")
+  );
+});
