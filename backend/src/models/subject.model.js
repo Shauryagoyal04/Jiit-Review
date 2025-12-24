@@ -8,7 +8,7 @@ const subjectSchema = new mongoose.Schema(
       trim: true
     },
 
-    department: {
+    type: {
       type: String,
       required: true,
       trim: true
@@ -28,4 +28,8 @@ const subjectSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+subjectSchema.index(
+  { name: 1, type: 1, semester: 1 },
+  { unique: true }
+);
 export const Subject = mongoose.model("Subject", subjectSchema);

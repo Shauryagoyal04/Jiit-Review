@@ -1,0 +1,302 @@
+[
+  {
+    "name": "FUNDAMENTALS OF SOFT COMPUTING",
+    "type": "DE-2",
+    "semester": 6,
+    "campus": "both"
+  },
+  {
+    "name": "INTRODUCTION TO LARGE SCALE DATABASE SYSTEMS",
+    "type": "DE-2",
+    "semester": 6,
+    "campus": "both"
+  },
+  {
+    "name": "SENSOR TECHNOLOGY & ANDROID PROGRAMMING",
+    "type": "DE-2",
+    "semester": 6,
+    "campus": "both"
+  },
+  {
+    "name": "INTRODUCTION TO COMPILER DESIGN",
+    "type": "DE-2",
+    "semester": 6,
+    "campus": "both"
+  },
+  {
+    "name": "WEB TECHNOLOGY AND CYBER SECURITY",
+    "type": "DE-2",
+    "semester": 6,
+    "campus": "both"
+  },
+  {
+    "name": "CONCEPTS OF GRAPH THEORY",
+    "type": "DE-3",
+    "semester": 6,
+    "campus": "both"
+  },
+  {
+    "name": "INTRODUCTION TO BLOCKCHAIN TECHNOLOGY",
+    "type": "DE-3",
+    "semester": 6,
+    "campus": "both"
+  },
+  {
+    "name": "FUNDAMENTALS OF DISTRIBUTED AND CLOUD COMPUTING",
+    "type": "DE-3",
+    "semester": 6,
+    "campus": "both"
+  },
+  {
+    "name": "BIG DATA INGESTION",
+    "type": "DE-3",
+    "semester": 6,
+    "campus": "both"
+  },
+  {
+    "name": "OPEN SOURCE SOFTWARE DEVELOPMENT",
+    "type": "DE-3",
+    "semester": 6,
+    "campus": "both"
+  },
+  {
+    "name": "ORGANIZATIONAL BEHAVIOR",
+    "type": "HSS-3",
+    "semester": 6,
+    "campus": "128"
+  },
+  {
+    "name": "MARKETING MANAGEMENT",
+    "type": "HSS-3",
+    "semester": 6,
+    "campus": "both"
+  },
+  {
+    "name": "LITERATURE AND ADAPTION",
+    "type": "HSS-3",
+    "semester": 6,
+    "campus": "both"
+  },
+  {
+    "name": "POLITICAL PHILOSOPHY",
+    "type": "HSS-3",
+    "semester": 6,
+    "campus": "both"
+  },
+  {
+    "name": "DEVELOPMENT ISSUES AND RURAL ENGINEERING",
+    "type": "HSS-3",
+    "semester": 6,
+    "campus": "both"
+  },
+  {
+    "name": "GAME THEORY FOR ENGINEERS",
+    "type": "HSS-3",
+    "semester": 6,
+    "campus": "62"
+  },
+  {
+    "name": "INVESTMENT MANAGEMENT",
+    "type": "HSS-3",
+    "semester": 6,
+    "campus": "62"
+  },
+  {
+    "name": "GLOBAL POLITICS",
+    "type": "HSS-3",
+    "semester": 6,
+    "campus": "62"
+  },
+  {
+    "name": "EFFECTIVE TOOLS FOR CAREER MANAGEMENT AND DEVELOPMENT",
+    "type": "HSS-3",
+    "semester": 6,
+    "campus": "62"
+  },
+  {
+    "name": "INDIAN LITERATURE",
+    "type": "HSS-3",
+    "semester": 6,
+    "campus": "62"
+  },
+  {
+    "name": "HEALTH COMMUNICATION",
+    "type": "HSS-3",
+    "semester": 6,
+    "campus": "62"
+  },
+  {
+    "name": "OPERATIONS RESEARCH",
+    "type": "OE-1",
+    "semester": 6,
+    "campus": "both"
+  },
+  {
+    "name": "PROJECT MANAGEMENT",
+    "type": "OE-1",
+    "semester": 6,
+    "campus": "128"
+  },
+  {
+    "name": "STATISTICS",
+    "type": "OE-1",
+    "semester": 6,
+    "campus": "both"
+  },
+  {
+    "name": "SOLID STATE ELECTRONIC DEVICES",
+    "type": "OE-1",
+    "semester": 6,
+    "campus": "both"
+  },
+  {
+    "name": "PHOTOVOLTAIC TECHNIQUES",
+    "type": "OE-1",
+    "semester": 6,
+    "campus": "both"
+  },
+  {
+    "name": "MATHEMATICAL FOUNDATIONS OF 6G COMMUNICATION SYSTEMS",
+    "type": "OE-1",
+    "semester": 6,
+    "campus": "128"
+  },
+  {
+    "name": "COMPUTATIONAL PHYSICS",
+    "type": "OE-1",
+    "semester": 6,
+    "campus": "128"
+  },
+  {
+    "name": "MATHEMATICAL FOUNDATIONS OF GEOGRAPHIC INFORMATION SYSTEMS",
+    "type": "OE-1",
+    "semester": 6,
+    "campus": "128"
+  },
+  {
+    "name": "APPLIED STATISTICAL MECHANICS",
+    "type": "OE-1",
+    "semester": 6,
+    "campus": "both"
+  },
+  {
+    "name": "ECONOMY, POLICY AND BUSINESS ENVIRONMENT",
+    "type": "OE-1",
+    "semester": 6,
+    "campus": "62"
+  },
+  {
+    "name": "MEDICAL AND INDUSTRIAL APPLICATIONS OF NUCLEAR RADIATIONS",
+    "type": "OE-1",
+    "semester": 6,
+    "campus": "62"
+  },
+  {
+    "name": "APPLIED MATHEMATICAL METHODS",
+    "type": "OE-1",
+    "semester": 6,
+    "campus": "62"
+  },
+  {
+    "name": "APPLICATIONAL ASPECTS OF DIFFERENTIAL EQUATIONS",
+    "type": "OE-1",
+    "semester": 6,
+    "campus": "62"
+  },
+  {
+    "name": "URBAN SOCIOLOGY",
+    "type": "OE-1",
+    "semester": 6,
+    "campus": "62"
+  },
+  {
+    "name": "POPULAR LITERATURE",
+    "type": "OE-1",
+    "semester": 6,
+    "campus": "62"
+  },
+  {
+    "name": "POLYMER CHEMISTRY",
+    "type": "OE-1",
+    "semester": 6,
+    "campus": "62"
+  },
+  {
+    "name": "THEATRE AND PERFORMANCE",
+    "type": "VAC",
+    "semester": 6,
+    "campus": "both"
+  },
+  {
+    "name": "ADVANCED JAVA PROGRAMMING WORKSHOP",
+    "type": "VAC",
+    "semester": 6,
+    "campus": "both"
+  },
+  {
+    "name": "GENAI WORKSHOP",
+    "type": "VAC",
+    "semester": 6,
+    "campus": "both"
+  },
+  {
+    "name": "ETHICAL HACKING WORKSHOP",
+    "type": "VAC",
+    "semester": 6,
+    "campus": "both"
+  },
+  {
+    "name": "ADVANCED DATA STRUCTURES AND ALGORITHMS WORKSHOP",
+    "type": "VAC",
+    "semester": 6,
+    "campus": "both"
+  },
+  {
+    "name": "COMPUTATIONAL PHOTONICS",
+    "type": "VAC",
+    "semester": 6,
+    "campus": "both"
+  },
+  {
+    "name": "FOUNDATIONS OF COMPUTATIONAL ARITHMETIC",
+    "type": "VAC",
+    "semester": 6,
+    "campus": "both"
+  },
+  {
+    "name": "BASICS OF INDUSTRIAL MATHEMATICS",
+    "type": "VAC",
+    "semester": 6,
+    "campus": "both"
+  },
+  {
+    "name": "SUSTAINABLE ENERGY STORAGE AND CONVERSION",
+    "type": "VAC",
+    "semester": 6,
+    "campus": "both"
+  },
+  {
+    "name": "SOFTWARE ENGINEERING",
+    "type": "CE-3",
+    "semester": 6,
+    "campus": "both"
+  },
+  {
+    "name": "SOFTWARE ENGINEERING LAB",
+    "type": "CE-3",
+    "semester": 6,
+    "campus": "both"
+  },
+  {
+    "name": "ARTIFICIAL INTELLIGENCE",
+    "type": "CE-3",
+    "semester": 6,
+    "campus": "both"
+  },
+  {
+    "name": "ARTIFICIAL INTELLIGENCE LAB",
+    "type": "CE-3",
+    "semester": 6,
+    "campus": "both"
+  }
+]
