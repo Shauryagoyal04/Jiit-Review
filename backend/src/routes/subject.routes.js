@@ -8,10 +8,10 @@ import {
 
 const router = Router();
 
-// Public – subject listing
+// Public
 router.get("/", getAllSubjects);
 
-// Protected – reviews
+// Protected
 router.get("/:id/reviews", verifyJWT, getSubjectReviews);
 router.post("/:id/reviews", verifyJWT, addSubjectReview);
 

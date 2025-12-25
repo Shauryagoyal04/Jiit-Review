@@ -14,12 +14,6 @@ const subjectReviewSchema = new mongoose.Schema(
       required: true
     },
 
-    campus: {
-      type: String,
-      enum: ["62", "128", "both"],
-      required: true
-    },
-
     ratings: {
       difficulty: { type: Number, min: 1, max: 5, required: true },
       content: { type: Number, min: 1, max: 5, required: true },
