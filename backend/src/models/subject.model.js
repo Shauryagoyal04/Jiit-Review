@@ -8,11 +8,17 @@ const subjectSchema = new mongoose.Schema(
       trim: true
     },
 
-    department: {
+    type: {
       type: String,
-      required: true
+      required: true,
+      trim: true
     },
-
+    semester: {
+      type: Number,
+      required: true,
+      min: 1,
+      max: 8
+    },
     campus: {
       type: String,
       enum: ["62", "128", "both"],
@@ -22,4 +28,8 @@ const subjectSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+subjectSchema.index(
+  { name: 1, type: 1, semester: 1 },
+  { unique: true }
+);
 export const Subject = mongoose.model("Subject", subjectSchema);

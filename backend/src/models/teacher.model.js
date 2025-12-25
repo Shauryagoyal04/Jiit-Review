@@ -10,16 +10,29 @@ const teacherSchema = new mongoose.Schema(
 
     department: {
       type: String,
-      required: true
+      required: true,
+      trim: true
     },
 
-    campus: {
+    designation: {
       type: String,
-      enum: ["62", "128"],
-      required: true
+      required: true,
+      trim: true
+    },
+
+    highestQualification: {
+      type: String,
+      required: true,
+      trim: true
     }
   },
   { timestamps: true }
+);
+
+// Prevent duplicate teachers
+teacherSchema.index(
+  { name: 1, department: 1 },
+  { unique: true }
 );
 
 export const Teacher = mongoose.model("Teacher", teacherSchema);

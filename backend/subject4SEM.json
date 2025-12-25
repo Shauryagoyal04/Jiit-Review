@@ -1,0 +1,110 @@
+[
+  {
+    "name": "FUNDAMENTALS OF DATA ANALYTICS",
+    "type": "DE-1",
+    "semester": 4,
+    "campus": "both"
+  },
+  {
+    "name": "FUNDAMENTALS OF DATA ANALYTICS LAB",
+    "type": "DE-1",
+    "semester": 4,
+    "campus": "both"
+  },
+  {
+    "name": "FUNDAMENTALS OF MOBILE APPLICATION DEVELOPMENT",
+    "type": "DE-1",
+    "semester": 4,
+    "campus": "both"
+  },
+  {
+    "name": "FUNDAMENTALS OF MOBILE APPLICATION DEVELOPMENT LAB",
+    "type": "DE-1",
+    "semester": 4,
+    "campus": "both"
+  },
+  {
+    "name": "FUNDAMENTALS OF SMART SYSTEMS AND IOT",
+    "type": "DE-1",
+    "semester": 4,
+    "campus": "both"
+  },
+  {
+    "name": "FUNDAMENTALS OF SMART SYSTEMS AND IOT LAB",
+    "type": "DE-1",
+    "semester": 4,
+    "campus": "both"
+  },
+  {
+    "name": "FINANCIAL ACCOUNTING",
+    "type": "HSS-1",
+    "semester": 4,
+    "campus": "both"
+  },
+  {
+    "name": "HUMAN RESOURCE MANAGEMENT",
+    "type": "HSS-1",
+    "semester": 4,
+    "campus": "128"
+  },
+  {
+    "name": "INDUSTRIAL ECONOMICS",
+    "type": "HSS-1",
+    "semester": 4,
+    "campus": "both"
+  },
+  {
+    "name": "QUANTITATIVE METHODS FOR SOCIAL SCIENCES",
+    "type": "HSS-1",
+    "semester": 4,
+    "campus": "both"
+  },
+  {
+    "name": "INTRODUCTION TO SOCIOLOGY",
+    "type": "HSS-1",
+    "semester": 4,
+    "campus": "both"
+  },
+  {
+    "name": "INTRODUCTION TO POLITICAL SCIENCE",
+    "type": "HSS-1",
+    "semester": 4,
+    "campus": "both"
+  },
+  {
+    "name": "SCIENCE OF HAPPINESS",
+    "type": "HSS-1",
+    "semester": 4,
+    "campus": "62"
+  },
+  {
+    "name": "PRINCIPLES OF MANAGEMENT",
+    "type": "HSS-1",
+    "semester": 4,
+    "campus": "62"
+  },
+  {
+    "name": "MEDIA, CULTURE AND SOCIETY",
+    "type": "HSS-1",
+    "semester": 4,
+    "campus": "62"
+  },
+  {
+    "name": "INTRODUCTION TO NEOLIBERALISM",
+    "type": "HSS-1",
+    "semester": 4,
+    "campus": "62"
+  },
+  {
+    "name": "SOCIOLOGY OF WORK",
+    "type": "HSS-1",
+    "semester": 4,
+    "campus": "62"
+  },
+  {
+    "name": "INTRODUCTION TO LITERATURE",
+    "type": "HSS-1",
+    "semester": 4,
+    "campus": "62"
+  }
+]

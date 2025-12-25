@@ -1,29 +1,23 @@
 import jwt from "jsonwebtoken";
 import ApiError from "../utils/ApiError.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
+import { User } from "../models/user.model.js";
 
-const authMiddleware = asyncHandler(async (req, res, next) => {
-  const authHeader = req.header("Authorization");
+export const verifyJWT = asyncHandler(async (req, res, next) => {
+  const token =
+    req.header("Authorization")?.replace("Bearer ", "");
 
-  if (!authHeader || !authHeader.startsWith("Bearer ")) {
-    throw new ApiError(401, "Unauthorized access: Token missing");
+  if (!token) {
+    throw new ApiError(401, "Unauthorized access");
   }
 
-  const token = authHeader.replace("Bearer ", "");
+  const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-  try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-
-    // Attach minimal trusted data
-    req.user = {
-      userId: decoded.userId,
-      campus: decoded.campus
-    };
-
-    next();
-  } catch (error) {
-    throw new ApiError(401, "Unauthorized access: Invalid or expired token");
+  const user = await User.findById(decoded.userId).select("-password");
+  if (!user) {
+    throw new ApiError(401, "Invalid token");
   }
+
+  req.user = user;
+  next();
 });
-
-export default authMiddleware;

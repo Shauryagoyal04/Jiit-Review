@@ -1,0 +1,2264 @@
+[
+  {
+    "name": "SURESH CHANDRA SAXENA",
+    "department": "GEN",
+    "designation": "-ADMIN PRO CHANCELLOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "BODH RAJ MEHTA",
+    "department": "GEN",
+    "designation": "-ADMIN VICE CHANCELLOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "VIKAS SAXENA",
+    "department": "CSE/IT",
+    "designation": "DIRECTOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "DEVENDRA KUMAR RAI",
+    "department": "PMSE",
+    "designation": "DIRECTOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ANUBHA VASHISHT",
+    "department": "JBS",
+    "designation": "DIRECTOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ANSHU BANWARI",
+    "department": "HSS",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SANNAPU SURESH",
+    "department": "JBS",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SHIKHA JAIN",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "K.RAJALAKSHMI",
+    "department": "CSE/IT",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "PANKAJ KUMAR YADAV",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "VIBHA RANI",
+    "department": "BIO",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "JASMINE SAINI",
+    "department": "ECE",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "PURTEE KOHLI",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(GRADE-I)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "VIVEK KUMAR DWIVEDI",
+    "department": "ECE",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "MANISHA SINGH",
+    "department": "BIO",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "LOKENDRA KUMAR",
+    "department": "MATHEMATICS",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "PARMEET KAUR SODHI",
+    "department": "CSE/IT",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SHRUTI KALRA",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SHWETA DANG",
+    "department": "BIO",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "JUHI GUPTA",
+    "department": "ECE",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SHARIQ MURTUZA",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "MRADULA SHARMA",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ARCHANA PANDEY",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "VIMAL KUMAR MISHRA",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ANUJ BHARDWAJ",
+    "department": "MATHEMATICS",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "AMIT VERMA",
+    "department": "PMSE",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ALKA TRIPATHI",
+    "department": "MATHEMATICS",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "MUKTA MANI",
+    "department": "HSS",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "MANISH KUMAR THAKUR",
+    "department": "CSE/IT",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SUJATA MOHANTY",
+    "department": "BIO",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "PAWAN KUMAR UPADHYAY",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "NAVENDU GOSWAMI",
+    "department": "PMSE",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "INDU CHAWLA",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "POTUKUCHI RAGHU VAMSI",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SHERRY GARG",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "EKTA BHATT",
+    "department": "BIO",
+    "designation": "ASST.PROF(GRADE-I)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "MONALI BHATTACHARYA",
+    "department": "HSS",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "HIMANSHU AGARWAL",
+    "department": "MATHEMATICS",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "RAGHVENDA KUMAR SINGH",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "AMARJEET",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "AMARJEET KAUR",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "SHWETA SRIVASTAVA",
+    "department": "ECE",
+    "designation": "DEAN(ACADEMIC & RESEARCH)-2",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "RUBY BENIWAL",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "VARSHA GARG",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "KASHAV AJMERA",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "TAJ ALAM",
+    "department": "CSE/IT",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "MANDEEP SINGH NARULA",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "HIMANI BANSAL",
+    "department": "CSE/IT",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "NITESH SINGH",
+    "department": "MED",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "ANUJ KUMAR",
+    "department": "PMSE",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "CHANDAN KUMAR",
+    "department": "MED",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "PRABHAKAR JHA",
+    "department": "MED",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "RAHUL KUMAR",
+    "department": "MED",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "NEHA SINGHAL",
+    "department": "MATHEMATICS",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "CHARU SIJORIA",
+    "department": "JBS",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "RACHNA SINGH",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ANITA SAHOO",
+    "department": "CSE/IT",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "VISHAL GUPTA",
+    "department": "JBS",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "RACHANA",
+    "department": "BIO",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "VARUN GOEL",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "GARIMA KAPUR",
+    "department": "ECE",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "EKTA SRIVASTAVA",
+    "department": "HSS",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ABHAY KUMAR",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "KIRTI AGGARWAL",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ANURAJ PANWAR",
+    "department": "PMSE",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "DEEPTI",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "ANKITA VERMA",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "MANOJ TRIPATHI",
+    "department": "PMSE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ASHISH MISHRA",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ALKA SINGHAL",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "AMITA BHAGAT",
+    "department": "MATHEMATICS",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "NEHA AHLAWAT",
+    "department": "MATHEMATICS",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "RASHMI KUSHWAH",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SHRUTI JAISWAL",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SONAL",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "NEERAJ JAIN",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "AJAY KUMAR",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ATUL KUMAR",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "HEMANT KUMAR",
+    "department": "ECE",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "PARUL ARORA",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "NEETU JOSHI",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "MADHU JHARIYA",
+    "department": "MED",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "RITESH KUMAR SHARMA",
+    "department": "ECE",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "LAKHVEER KAUR",
+    "department": "MATHEMATICS",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "KANUPRIYA MISRA BAKHRU",
+    "department": "HSS",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "PRAVEEN KUMAR SHARMA",
+    "department": "HSS",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "DEEPAK VERMA",
+    "department": "HSS",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "BHUBESH CHANDER JOSHI",
+    "department": "PMSE",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "PANKAJ KUMAR SRIVASTAVA",
+    "department": "MATHEMATICS",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SHARDHA PORWAL",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "BHARTENDU CHATURVEDI",
+    "department": "ECE",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SAKSHI GUPTA",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "PULKIT MEHNDIRATTA",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "NEETU SARDANA",
+    "department": "CSE/IT",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ARPITA JADHAV BHATT",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "VINAY ANAND TIKKIWAL",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ANUJA ARORA",
+    "department": "CSE/IT",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "MANOJ KUMAR",
+    "department": "PMSE",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "KAVITA PANDEY",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SHRIRAM ANIL PURANKAR",
+    "department": "JBS",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "VIKAS MALIK",
+    "department": "PMSE",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ANKUR BHARDWAJ",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ABHISHEK KASHYAP",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "MONIKA",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "AKANKSHA MEHNDIRATTA",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "PARUL AGARWAL",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "DHARMVEER SINGH RAJPOOT",
+    "department": "CSE/IT",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ADITI SHARMA",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ANKITA",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SOMYA JAIN",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "GAURAV VERMA",
+    "department": "ECE",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "YOGESH GUPTA",
+    "department": "MATHEMATICS",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "MEGHA AGARWAL",
+    "department": "ECE",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "PRASHANT KAUSHIK",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "DINESH CHANDRA SINGH BISHT",
+    "department": "MATHEMATICS",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "MUKESH SARASWAT",
+    "department": "CSE/IT",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "DEVPRIYA SONI",
+    "department": "CSE/IT",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "GAURAV KUMAR NIGAM",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SHRADHA SAXENA",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "VISHAL NARAIN SAXENA",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "PRIYANKA KWATRA",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "HEMA NAGARAJA",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "AMBALIKA SARKAR",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "AMANPREET KAUR",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "VINEET KHANDELWAL",
+    "department": "ECE",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "REEMA GABRANI",
+    "department": "BIO",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "PRAKASH KUMAR",
+    "department": "CSE/IT",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SUDHA SRIVASTAVA",
+    "department": "BIO",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "NAVNEET KUMAR SHARMA",
+    "department": "PMSE",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "BHAGWATI PRASAD CHAMOLA",
+    "department": "MATHEMATICS",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "RAHUL KAUSHIK",
+    "department": "ECE",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "MANAS RANJAN BEHERA",
+    "department": "HSS",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "RICHA GUPTA",
+    "department": "ECE",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "VIBHA GUPTA",
+    "department": "BIO",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SAJAIVIR SINGH",
+    "department": "ECE",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "PATO KUMARI",
+    "department": "MATHEMATICS",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "PAPIA CHOWDHURY",
+    "department": "PMSE",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "REEMA BUDHIRAJA",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "VIJAY KHARE",
+    "department": "ECE",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SUMA DAWN",
+    "department": "CSE/IT",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ATUL KUMAR SRIVASTAVA",
+    "department": "ECE",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "ALKA SHARMA",
+    "department": "HSS",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "RAJNISH KUMAR MISRA",
+    "department": "JBS",
+    "designation": "DEAN -JBS",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "HIMANSHU AGRAWAL",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ANSHU DHIRENDRA VARSHNEY",
+    "department": "PMSE",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "MADHU JAIN",
+    "department": "ECE",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ANUBHUTI RODA MOHINDRA",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "PRASHANT KUMAR CHAUHAN",
+    "department": "PMSE",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "NIYATI AGGRAWAL",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "NILU CHOUDHARY",
+    "department": "HSS",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "JITENDRA MOHAN",
+    "department": "ECE",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SAKSHI VARSHNEY",
+    "department": "HSS",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "K.NISHA",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "MOHD SARFARAZ",
+    "department": "MATHEMATICS",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SHIV PRASAD PUROHIT",
+    "department": "PMSE",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SANDEEP KUMAR SINGH",
+    "department": "CA",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SHAMIM AKHTER",
+    "department": "ECE",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "KRISHNA ASAWA",
+    "department": "CSE/IT",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "KRISHNA SUNDARI SATTIRAJU",
+    "department": "BIO",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SMRITI BHATNAGAR",
+    "department": "ECE",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "CHAKRESH KUMAR JAIN",
+    "department": "BIO",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "MUKTA GOYAL",
+    "department": "CSE/IT",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ANIRBAN PATHAK",
+    "department": "PMSE",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ASHISH GOEL",
+    "department": "ECE",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "TRIBHUWAN KUMAR TEWARI",
+    "department": "CSE/IT",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "BHAWNA GUPTA",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "BADRI BAJAJ",
+    "department": "HSS",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SHIKHA K MEHTA",
+    "department": "CSE/IT",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ARTI JAIN",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "INDIRA P SARETHY",
+    "department": "BIO",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "RAKESH KUMAR DWIVEDI",
+    "department": "PMSE",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SUNEET KUMAR AWASTHI",
+    "department": "PMSE",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SATYENDRA KUMAR",
+    "department": "ECE",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SMRITI GAUR",
+    "department": "BIO",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SUJATA KAPOOR",
+    "department": "JBS",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "PAMMI GAUBA",
+    "department": "BIO",
+    "designation": "DEAN(ACADEMIC & RESEARCH)-1",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ALOK JOSHI",
+    "department": "ECE",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SANDEEP CHHOKER",
+    "department": "PMSE",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "MEGHA RATHI",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "KAPIL DEV TYAGI",
+    "department": "ECE",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "AMIT SRIVASTAVA",
+    "department": "MATHEMATICS",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "AMBA AGARWAL",
+    "department": "HSS",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "DHANALEKSHMI GOPINATHAN",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "B SURESH",
+    "department": "ECE",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "SHALINI MANI",
+    "department": "BIO",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ASHWANI MATHUR",
+    "department": "BIO",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "GARIMA MATHUR",
+    "department": "BIO",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "DINESH TRIPATHI",
+    "department": "PMSE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ASHISH GUPTA",
+    "department": "ECE",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "KULDEEP BADERIA",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "BAJRANG BANSAL",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ANKIT VIDYARTHI",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SAURABH CHATURVEDI",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SULABH TYAGI",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "VIVEK KUMAR SINGH",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "GAURAV",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(GRADE-I)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "ASHISH BHATNAGAR",
+    "department": "PMSE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SARISHTY GUPTA",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "AMANDEEP KAUR",
+    "department": "HSS",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "MITUSHI SINGH",
+    "department": "JBS",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ARCHANA SHRIVASTAVA",
+    "department": "JBS",
+    "designation": "ASSOCIATE PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SWETA GOEL",
+    "department": "JBS",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SONAM CHAWLA",
+    "department": "BIO",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SHIKHA PANDEY",
+    "department": "MATHEMATICS",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ASHISH KUMAR",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "DIVYA GOEL",
+    "department": "JBS",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "KAPIL MADAN",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "RAVI GUPTA",
+    "department": "PMSE",
+    "designation": "ASST.PROF(GRADE-I)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "JANARDAN KUMAR VERMA",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "NISHA SHUKLA",
+    "department": "MATHEMATICS",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "RICHA SHARMA",
+    "department": "MATHEMATICS",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "VIKASH",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "GARIMA SRIVASTAV",
+    "department": "JBS",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "BHAWNA SAXENA",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "MANISH KUMAR BANSAL",
+    "department": "MATHEMATICS",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SAMRITI KALIA",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SHRUTI",
+    "department": "MATHEMATICS",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "VANDANA SEHGAL",
+    "department": "HSS",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "VIKAS BHATNAGAR",
+    "department": "JBS",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "JAGRITI",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "KIRTI JAIN",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ARSHI BARIN",
+    "department": "JBS",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "AMIT MISHRA",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SHIVANI KAPOOR",
+    "department": "JBS",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "EKTA SINGH",
+    "department": "HSS",
+    "designation": "ASST.PROF(GRADE-I)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "VAIBHAV SUBHASH RAWOOT",
+    "department": "PMSE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SHASHANK GOEL",
+    "department": "MATHEMATICS",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "RIDHIMA BHANOT SHARMA",
+    "department": "JBS",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "NAMREETA KUMARI",
+    "department": "HSS",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "DEEPIKA VARSHNEY",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SHWETA VERMA",
+    "department": "HSS",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "MEENAL JAIN",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SHRUTI GUPTA",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ILA JOSHI",
+    "department": "HSS",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "GURUPRASAD PRAKASH KADAM",
+    "department": "PMSE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "RAJNISH PRAKASH SINGH",
+    "department": "BIO",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "HARLEEN KAUR",
+    "department": "HSS",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "NITIN MUCHHAL",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "GAURAV AGGARWAL",
+    "department": "MATHEMATICS",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ABHIJEET UPADHYA",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "NIDHI BATRA",
+    "department": "BIO",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SAPNA YADAV",
+    "department": "JBS",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "RICHA CHAUHAN",
+    "department": "JBS",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "PURWA SRIVASTAVA",
+    "department": "HSS",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "NIKHIL YADAV",
+    "department": "JBS",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ANKITA JAISWAL",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "RISHIBRIND KUMAR UPADHYAY",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "TARUN AGRAWAL",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ANIRUDH SHARMA",
+    "department": "BIO",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "INDRANI CHAKRABORTY",
+    "department": "PMSE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SHIVANGI SAXENA",
+    "department": "JBS",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "RADHA KRISHNA GOPAL",
+    "department": "PMSE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "YOGITA DWIVEDI",
+    "department": "JBS",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "JASMIN",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "POOJA CHOUDHARY",
+    "department": "BIO",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "NEETIMA AGARWAL",
+    "department": "JBS",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SUNIL KUMAR YADAV",
+    "department": "JBS",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "NIBHA SINHA",
+    "department": "HSS",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ASHUTOSH SHUKLA",
+    "department": "JBS",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "RITU RAJ",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "DIVYA KAUSHIK",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ANKISHA VIJAY",
+    "department": "BIO",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "AMITESH",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "ANIL KUMAR MAHTO",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SHWETABH SINGH",
+    "department": "MED",
+    "designation": "ASST.PROF(GRADE-I)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "ASMITA YADAV",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SUDIP KUMAR HALDAR",
+    "department": "PMSE",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "VARUN SRIVASTAVA",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "KAMLESH KUMAR SHUKLA",
+    "department": "MATHEMATICS",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SHWETA RANI",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SANDEEP MISHRA",
+    "department": "PMSE",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "RAM SURAT CHAUHAN",
+    "department": "MATHEMATICS",
+    "designation": "ASST.PROF(GRADE-I)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "URBASHI SATPATHI",
+    "department": "PMSE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "KEDAR NATH SINGH",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SHIVANI",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "NEHA SINGH",
+    "department": "HSS",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "LALITA MISHRA",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "RAJIV KUMAR MISHRA",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "JOYSMITA CHATTERJEE",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ASTHA SHARMA",
+    "department": "ECE",
+    "designation": "ASSISTANT PROFESSOR",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "VAISHALI SHARMA",
+    "department": "ECE",
+    "designation": "ASSISTANT PROFESSOR",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "AANCHAL AGARWAL",
+    "department": "ECE",
+    "designation": "ASSISTANT PROFESSOR",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "SONAL SAURABH",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(GRADE-I)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "PRATIK SHRIVASTAVA",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ADITI PRIYA",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(GRADE-I)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "PRAKHAR MISHRA",
+    "department": "CSE/IT",
+    "designation": "ASSISTANT PROFESSOR",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "SHELENDRA PAL",
+    "department": "CA",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SHOBHIT TYAGI",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "AYUSHI PANDEY",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(GRADE-I)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "MINAL TANDEKAR",
+    "department": "CSE/IT",
+    "designation": "ASSISTANT PROFESSOR",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "SHIVENDRA VIKRAM SINGH",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(GRADE-I)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "REETIKA DEBROY",
+    "department": "BIO",
+    "designation": "ASSISTANT PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SHIKHA KUMARI",
+    "department": "HSS",
+    "designation": "ASST.PROF(GRADE-I)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "RITIKA CHAUDHARY",
+    "department": "CSE/IT",
+    "designation": "ASSISTANT PROFESSOR",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "TWINKLE TYAGI",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "SAYANI GHOSAL",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "MEGH SINGHAL",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "PRATEEK KUMAR SONI",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(GRADE-I)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "RAMANAND BISAURIYA",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "MANIKA JHA",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "AJIT KUMAR",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ASTHA SINGH",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "YOGITA NARUKA",
+    "department": "HSS",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "MOHIT SINGH",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(GRADE-I)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "BHUVANESHWARI SHANKAR",
+    "department": "ECE",
+    "designation": "ASSISTANT PROFESSOR",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "MAYURI GUPTA",
+    "department": "CSE/IT",
+    "designation": "ASSISTANT PROFESSOR",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "SUMESHWAR SINGH",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(GRADE-I)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "AARTI GOEL",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(GRADE-I)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "AASTHA MAHESHWARI",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ANUJA SHUKLA",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(GRADE-I)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "PUSHP",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "TANVI GAUTAM",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "NIRAJ KUMAR",
+    "department": "MED",
+    "designation": "ASST.PROF(GRADE-I)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SATYA NARAYAN PATEL",
+    "department": "MED",
+    "designation": "ASST.PROF(GRADE-I)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "DIKSHA CHAWLA",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "AMRITA KAUL",
+    "department": "ECE",
+    "designation": "ASSISTANT PROFESSOR",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "RAVI PRAKASH VERMA",
+    "department": "ECE",
+    "designation": "ASSISTANT PROFESSOR",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "JYOTI MISHRA",
+    "department": "ECE",
+    "designation": "ASSISTANT PROFESSOR",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "JYOTI DESHWAL YADAV",
+    "department": "ECE",
+    "designation": "ASSISTANT PROFESSOR",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "RICHA KUSHWAHA",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(GRADE-I)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "ARTI NOOR",
+    "department": "ECE",
+    "designation": "DEAN (ACADEMIC AFFAIRS ) -128",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "BHAVNA BANSAL",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "NEETU SINGH",
+    "department": "CA",
+    "designation": "ASST.PROF(GRADE-I)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "AKSHIT RAJ PATEL",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(GRADE-I)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "SUNIL BHATIA",
+    "department": "JBS",
+    "designation": "PROFESSOR",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "ANUPAMA PADHA",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "NAVEEN CHAUHAN",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "PREETI MITTAL",
+    "department": "CA",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "PANKAJ MISHRA",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "NEHA",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(GRADE-I)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "SATYA PRAKASH PATEL",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "NIVEDITTA BATRA",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(GRADE-I)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "NEERAJ PATHAK",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "NIDHI TEWARI",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "IMRAN RASHEED",
+    "department": "CA",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "AYUSH TRIPATHI",
+    "department": "MATHEMATICS",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "GUNJAN PUROHIT",
+    "department": "BIO",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "VIKAS SHARMA",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(GRADE-I)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "AAKRITI BHARDWAJ",
+    "department": "CA",
+    "designation": "ASST.PROF(GRADE-I)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "SHAGUN GUPTA",
+    "department": "CA",
+    "designation": "ASSISTANT PROFESSOR",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "SURAJ DAS",
+    "department": "HSS",
+    "designation": "ASST.PROF(GRADE-I)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "PARIDHI CHAUDHARY",
+    "department": "HSS",
+    "designation": "ASST.PROF(GRADE-I)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ANKUR GUPTA",
+    "department": "ECE",
+    "designation": "ASSISTANT PROFESSOR PRACTICE",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "PARUL SINGH",
+    "department": "JBS",
+    "designation": "ASST.PROF(GRADE-I)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "SONALI SRIVASTAVA",
+    "department": "JBS",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "RUCHI SINGH",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ROHIT KUMAR SONY",
+    "department": "CSE/IT",
+    "designation": "ASSISTANT PROFESSOR",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "DEEPTI MEHROTRA",
+    "department": "PMSE",
+    "designation": "DEAN (ACCREDITION ,",
+    "highestQualification": "RANKING"
+  },
+  {
+    "name": "HIMANI GUPTA",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "NARENDER",
+    "department": "PMSE",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "BHARTI ARORA",
+    "department": "PMSE",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "HARISH BISHWAKARMA",
+    "department": "MED",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "PRIYA",
+    "department": "HSS",
+    "designation": "ASST.PROF(GRADE-I)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "TARKESHWAR SINGH",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(GRADE-I)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "HIMANI PANT",
+    "department": "MATHEMATICS",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "AYUSH SAHU",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "PIYUSH SHARMA",
+    "department": "MED",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "GOLDIE GABRANI",
+    "department": "MATHEMATICS",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "PRIYA SHAHI",
+    "department": "MATHEMATICS",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "GORAV KUMAR GUGLIANI",
+    "department": "MED",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "MONIKA SURI",
+    "department": "HSS",
+    "designation": "DEAN -HSS & NEW PROGRAM",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "MOHD SALMAN KHAN",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "PANKAJ SINGH RANA",
+    "department": "MATHEMATICS",
+    "designation": "ASST.PROF(GRADE-I)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SILKI KHARALIYA",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "MANAN MEHTA",
+    "department": "DLC",
+    "designation": "ASST.PROF(GRADE-I)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "BHAWNA AGARWAL",
+    "department": "JBS",
+    "designation": "PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "NILUFAR YASMIN",
+    "department": "ECE",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "RUCHIN GUPTA",
+    "department": "CA",
+    "designation": "ASST.PROF(G-II)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "NARINDER KAUR",
+    "department": "PMSE",
+    "designation": "ASST.PROF(GRADE-I)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "MOHAMMAD PRAWESH ALAM",
+    "department": "MATHEMATICS",
+    "designation": "ASSISTANT PROFESSOR",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "MOHUA DUTTA",
+    "department": "HSS",
+    "designation": "ASST.PROF(GRADE-I)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "JYOTI",
+    "department": "CA",
+    "designation": "ASST.PROF(GRADE-I)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "NIVEDITA MISHRA",
+    "department": "BIO",
+    "designation": "ASST.PROF(GRADE-I)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "SUMIT MAHAJAN",
+    "department": "MED",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "PARNIKA KANSAL",
+    "department": "JBS",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  },
+  {
+    "name": "ANSHUL SINGH",
+    "department": "CSE/IT",
+    "designation": "ASST.PROF(GRADE-I)",
+    "highestQualification": "PG"
+  },
+  {
+    "name": "MONIKA SHUKLA",
+    "department": "BIO",
+    "designation": "ASST.PROF(SR.GRADE)",
+    "highestQualification": "PHD"
+  }
+]
