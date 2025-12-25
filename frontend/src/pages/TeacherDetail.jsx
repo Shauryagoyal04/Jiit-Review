@@ -1,195 +1,207 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
-import Navbar from '../components/Navbar';
-import RatingSlider from '../components/RatingSlider';
-import ReviewCard from '../components/ReviewCard';
-import api from '../api/axios';
+import React, { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+import Navbar from "../components/Navbar";
+import RatingSlider from "../components/RatingSlider";
+import ReviewCard from "../components/ReviewCard";
+import api from "../api/axios";
 
 const TeacherDetail = () => {
   const { id } = useParams();
   const { user } = useAuth();
   const navigate = useNavigate();
-  
+
   const [teacher, setTeacher] = useState(null);
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
   const [hasReviewed, setHasReviewed] = useState(false);
-  
+
   const [formData, setFormData] = useState({
     lateEntry: 3,
     taMarks: 3,
     clarity: 3,
     attendance: 3,
-    textReview: ''
+    textReview: ""
   });
+
   const [submitting, setSubmitting] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   useEffect(() => {
     fetchTeacherData();
   }, [id]);
 
+  // =========================
+  // Fetch teacher + reviews
+  // =========================
   const fetchTeacherData = async () => {
     try {
-      const [teacherRes, reviewsRes] = await Promise.all([
-        api.get(`/teachers/${id}`),
-        api.get(`/reviews/teacher/${id}`)
-      ]);
+      // Fetch single teacher
+      const teacherRes = await api.get(`/teachers/${id}`);
+      setTeacher(teacherRes.data.data);
 
-      setTeacher(teacherRes.data);
-      setReviews(reviewsRes.data);
-      
-      const userReview = reviewsRes.data.find(r => r.userId === user._id);
+      // Fetch reviews
+      const reviewsRes = await api.get(`/teachers/${id}/review`);
+      const fetchedReviews = reviewsRes.data.data.reviews;
+      setReviews(fetchedReviews);
+
+      // Check if current user already reviewed
+      const userReview = fetchedReviews.find((r) => r.userId === user?._id);
       setHasReviewed(!!userReview);
-      
+
     } catch (err) {
-      console.error('Failed to fetch teacher:', err);
+      console.error("Failed to fetch teacher:", err);
+      setTeacher(null);
     } finally {
       setLoading(false);
     }
   };
 
+  // =========================
+  // Handle rating changes
+  // =========================
   const handleRatingChange = (name, value) => {
-    setFormData({
-      ...formData,
-      [name]: value
-    });
+    setFormData({ ...formData, [name]: value });
   };
 
+  // =========================
+  // Submit review
+  // =========================
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('');
     setSubmitting(true);
+    setError("");
 
     try {
-      await api.post(`/reviews/teacher/${id}`, {
-        ratings: {
-          lateEntry: formData.lateEntry,
-          taMarks: formData.taMarks,
-          clarity: formData.clarity,
-          attendance: formData.attendance
-        },
+      await api.post(`/teachers/${id}/review`, {
+        lateEntry: formData.lateEntry,
+        taMarks: formData.taMarks,
+        clarity: formData.clarity,
+        attendance: formData.attendance,
         textReview: formData.textReview
       });
 
-      alert('Review submitted successfully!');
       setShowForm(false);
-      fetchTeacherData();
+      fetchTeacherData(); // refresh reviews
     } catch (err) {
-      setError(err.response?.data?.message || 'Failed to submit review');
+      setError(err.response?.data?.message || "Failed to submit review");
     } finally {
       setSubmitting(false);
     }
   };
 
+  // =========================
+  // Loading or teacher not found
+  // =========================
   if (loading) {
     return (
       <>
         <Navbar />
-        <div style={styles.container}>
-          <div style={styles.loading}>Loading...</div>
-        </div>
+        <div style={styles.loading}>Loading...</div>
       </>
     );
   }
 
+  if (!teacher) {
+    return (
+      <>
+        <Navbar />
+        <div style={styles.loading}>Teacher not found.</div>
+      </>
+    );
+  }
+
+  // =========================
+  // Render UI
+  // =========================
   return (
     <>
       <Navbar />
       <div style={styles.container}>
-        <button onClick={() => navigate('/dashboard')} style={styles.backBtn}>
-          ← Back to Dashboard
+        <button onClick={() => navigate("/dashboard")} style={styles.backBtn}>
+          ← Back
         </button>
 
         <div style={styles.header}>
           <div>
             <h1 style={styles.title}>{teacher.name}</h1>
-            <p style={styles.department}>{teacher.department}</p>
-            <span style={styles.campusBadge}>Campus {teacher.campus}</span>
+            <p style={styles.department}>
+              {teacher.department} • {teacher.designation}
+            </p>
+            <p>{teacher.highestQualification}</p>
           </div>
-          
-          {!hasReviewed && !showForm && (
-            <button onClick={() => setShowForm(true)} style={styles.reviewBtn}>
+
+          {!hasReviewed && (
+            <button
+              onClick={() => setShowForm(true)}
+              style={styles.reviewBtn}
+            >
               Write Review
             </button>
           )}
         </div>
 
         {showForm && (
-          <div style={styles.formCard} className="slide-up">
-            <h2 style={styles.formTitle}>Submit Your Review</h2>
-            {error && <div style={styles.error}>{error}</div>}
-            
-            <form onSubmit={handleSubmit}>
-              <RatingSlider
-                label="Late Entry Allowed"
-                value={formData.lateEntry}
-                onChange={handleRatingChange}
-                name="lateEntry"
-              />
-              <RatingSlider
-                label="TA Marks Fairness"
-                value={formData.taMarks}
-                onChange={handleRatingChange}
-                name="taMarks"
-              />
-              <RatingSlider
-                label="Teaching Clarity"
-                value={formData.clarity}
-                onChange={handleRatingChange}
-                name="clarity"
-              />
-              <RatingSlider
-                label="Attendance Strictness"
-                value={formData.attendance}
-                onChange={handleRatingChange}
-                name="attendance"
-              />
-              
-              <div style={styles.textAreaGroup}>
-                <label style={styles.label}>Your Review (Optional)</label>
-                <textarea
-                  value={formData.textReview}
-                  onChange={(e) => setFormData({...formData, textReview: e.target.value})}
-                  placeholder="Share your experience..."
-                  rows="4"
-                  style={styles.textarea}
-                />
-              </div>
+          <form onSubmit={handleSubmit} style={styles.formCard}>
+            {error && <p style={styles.error}>{error}</p>}
 
-              <div style={styles.formActions}>
-                <button
-                  type="button"
-                  onClick={() => setShowForm(false)}
-                  style={styles.cancelBtn}
-                >
-                  Cancel
-                </button>
-                <button
-                  type="submit"
-                  disabled={submitting}
-                  style={{
-                    ...styles.submitBtn,
-                    opacity: submitting ? 0.6 : 1,
-                    cursor: submitting ? 'not-allowed' : 'pointer'
-                  }}
-                >
-                  {submitting ? 'Submitting...' : 'Submit Review'}
-                </button>
-              </div>
-            </form>
-          </div>
+            {["lateEntry", "taMarks", "clarity", "attendance"].map((key) => {
+            const labels = {
+              lateEntry: "Late Arrival Tolerance",
+              taMarks: "TA Marks",
+              clarity: "Clarity",
+              attendance: "Attendance Strictness"
+            };
+            return (
+              <RatingSlider
+                key={key}
+                name={key}
+                value={formData[key]}
+                onChange={handleRatingChange}
+                label={labels[key]} // use custom label
+              />
+            );
+          })}
+
+            <textarea
+              placeholder="Optional review"
+              value={formData.textReview}
+              onChange={(e) =>
+                setFormData({ ...formData, textReview: e.target.value })
+              }
+              style={styles.textarea}
+            />
+
+            <div style={styles.formActions}>
+              <button
+                type="button"
+                onClick={() => setShowForm(false)}
+                style={styles.cancelBtn}
+              >
+                Cancel
+              </button>
+              <button
+                type="submit"
+                disabled={submitting}
+                style={{
+                  ...styles.submitBtn,
+                  opacity: submitting ? 0.6 : 1,
+                  cursor: submitting ? "not-allowed" : "pointer"
+                }}
+              >
+                {submitting ? "Submitting..." : "Submit Review"}
+              </button>
+            </div>
+          </form>
         )}
 
         <div style={styles.reviewsSection}>
-          <h2 style={styles.reviewsTitle}>
-            Reviews ({reviews.length})
-          </h2>
-          
+          <h2 style={styles.reviewsTitle}>Reviews ({reviews.length})</h2>
           {reviews.length === 0 ? (
-            <p style={styles.noReviews}>No reviews yet. Be the first to review!</p>
+            <p style={styles.noReviews}>
+              No reviews yet. Be the first to review!
+            </p>
           ) : (
             reviews.map((review) => (
               <ReviewCard key={review._id} review={review} type="teacher" />
@@ -200,6 +212,10 @@ const TeacherDetail = () => {
     </>
   );
 };
+
+// =========================
+// Styles (unchanged)
+// =========================
 
 const styles = {
   container: {
@@ -293,7 +309,7 @@ const styles = {
     display: 'block',
     fontSize: '0.875rem',
     fontWeight: '600',
-    color: 'var(--text-primary)',
+    color: '#f0f0f0',
     marginBottom: '0.5rem'
   },
   textarea: {

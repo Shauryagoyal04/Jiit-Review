@@ -14,6 +14,17 @@ export const getAllTeachers = asyncHandler(async (req, res) => {
     new ApiResponse(200, teachers, "Teachers fetched successfully")
   );
 });
+export const getTeacherById = asyncHandler(async (req, res) => {
+  const teacher = await Teacher.findById(req.params.id);
+
+  if (!teacher) {
+    throw new ApiError(404, "Teacher not found");
+  }
+
+  return res.json(
+    new ApiResponse(200, teacher, "Teacher fetched successfully")
+  );
+});
 
 /* =========================
    GET TEACHER REVIEWS (🔒)

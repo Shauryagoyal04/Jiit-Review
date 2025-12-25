@@ -39,7 +39,7 @@ const styles = {
   label: {
     fontSize: '0.875rem',
     fontWeight: '500',
-    color: '#374151'
+    color: '#f0f0f0df'
   },
   value: {
     fontSize: '1rem',
@@ -59,7 +59,7 @@ const styles = {
     justifyContent: 'space-between',
     marginTop: '0.25rem',
     fontSize: '0.75rem',
-    color: '#6b7280'
+    color: '#9aa4b8'
   }
 };
 

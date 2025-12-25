@@ -15,24 +15,27 @@ const Navbar = () => {
 
   return (
     <nav style={styles.nav}>
-      <div style={styles.container}>
+      <div style={styles.inner}>
         <Link to="/dashboard" style={styles.brand}>
           <div style={styles.logoIcon}>CR</div>
           <span style={styles.brandText}>Campus Reviews</span>
         </Link>
-        
+
         {user && (
           <div style={styles.rightSection}>
             <div style={styles.campusBadge}>
               Campus {user.campus}
             </div>
+
             <div style={styles.userEmail}>
               <span>👤</span>
               <span>{user.email}</span>
             </div>
+
             <button onClick={toggleTheme} style={styles.themeToggle}>
               {theme === 'dark' ? '☀️' : '🌙'}
             </button>
+
             <button onClick={handleLogout} style={styles.logoutBtn}>
               Logout
             </button>
@@ -45,6 +48,7 @@ const Navbar = () => {
 
 const styles = {
   nav: {
+    width: '100%',
     background: 'var(--bg-primary)',
     borderBottom: '1px solid var(--border)',
     boxShadow: 'var(--shadow-sm)',
@@ -52,84 +56,82 @@ const styles = {
     top: 0,
     zIndex: 100
   },
-  container: {
-    maxWidth: '1280px',
+
+  /* 🔥 THIS IS THE FIX */
+  inner: {
+    width: '100%',
+    maxWidth: '1400px',
     margin: '0 auto',
     padding: '1rem 2rem',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center'
   },
+
   brand: {
     display: 'flex',
     alignItems: 'center',
     gap: '0.75rem',
     textDecoration: 'none',
-    color: 'var(--text-primary)',
-    transition: 'transform 0.3s ease'
+    color: 'var(--text-primary)'
   },
+
   logoIcon: {
     width: '40px',
     height: '40px',
-    background: 'linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)',
+    background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)',
     borderRadius: '10px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    color: 'white',
-    fontWeight: 'bold',
-    fontSize: '1.125rem',
-    boxShadow: '0 4px 6px rgba(59, 130, 246, 0.3)'
+    color: '#fff',
+    fontWeight: 'bold'
   },
+
   brandText: {
-    fontWeight: '700',
-    fontSize: '1.5rem'
+    fontWeight: 700,
+    fontSize: '1.4rem'
   },
+
   rightSection: {
     display: 'flex',
     alignItems: 'center',
-    gap: '1.5rem'
+    gap: '1.25rem'
   },
+
   campusBadge: {
-    background: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)',
-    color: 'white',
+    background: 'linear-gradient(135deg,#3b82f6,#2563eb)',
+    color: '#fff',
+    padding: '0.4rem 1rem',
+    borderRadius: '9999px',
+    fontSize: '0.85rem'
+  },
+
+  userEmail: {
+    fontSize: '0.85rem',
+    color: 'var(--text-secondary)',
+    display: 'flex',
+    gap: '0.5rem',
+    alignItems: 'center'
+  },
+
+  themeToggle: {
+    width: '42px',
+    height: '42px',
+    borderRadius: '50%',
+    border: '2px solid var(--border)',
+    background: 'var(--bg-secondary)',
+    cursor: 'pointer'
+  },
+
+  logoutBtn: {
+    background: 'linear-gradient(135deg,#ef4444,#dc2626)',
+    color: '#fff',
+    border: 'none',
     padding: '0.5rem 1.25rem',
     borderRadius: '9999px',
-    fontSize: '0.875rem',
-    fontWeight: '600',
-    boxShadow: '0 4px 6px rgba(59, 130, 246, 0.3)',
-    animation: 'pulse 2s infinite'
-  },
-  userEmail: {
-    color: 'var(--text-secondary)',
-    fontSize: '0.875rem',
-    display: 'flex',
-    alignItems: 'center',
-    gap: '0.5rem'
-  },
-  themeToggle: {
-    background: 'var(--bg-secondary)',
-    border: '2px solid var(--border)',
-    width: '44px',
-    height: '44px',
-    borderRadius: '50%',
-    cursor: 'pointer',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    fontSize: '1.25rem',
-    transition: 'all 0.3s ease'
-  },
-  logoutBtn: {
-    background: 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)',
-    color: 'white',
-    border: 'none',
-    padding: '0.625rem 1.5rem',
-    borderRadius: '9999px',
-    fontWeight: '600',
-    cursor: 'pointer',
-    boxShadow: '0 4px 6px rgba(239, 68, 68, 0.3)',
-    transition: 'all 0.3s ease'
+    fontWeight: 600,
+    cursor: 'pointer'
   }
 };
 

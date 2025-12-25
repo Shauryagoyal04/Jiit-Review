@@ -26,6 +26,52 @@ export const getAllSubjects = asyncHandler(async (req, res) => {
   );
 });
 
+
+export const getSubjectById = asyncHandler(async (req, res) => {
+  const { id } = req.params;
+
+  // Find subject
+  const subject = await Subject.findById(id);
+  if (!subject) {
+    throw new ApiError(404, "Subject not found");
+  }
+
+  // Optionally, include reviews and avg ratings
+  const reviews = await SubjectReview.find({ subjectId: id });
+
+  let avgRatings = null;
+  if (reviews.length > 0) {
+    const totals = {
+      difficulty: 0,
+      content: 0,
+      examPattern: 0,
+      relativeMarks: 0
+    };
+
+    reviews.forEach((r) => {
+      totals.difficulty += r.ratings.difficulty;
+      totals.content += r.ratings.content;
+      totals.examPattern += r.ratings.examPattern;
+      totals.relativeMarks += r.ratings.relativeMarks;
+    });
+
+    avgRatings = {
+      difficulty: (totals.difficulty / reviews.length).toFixed(1),
+      content: (totals.content / reviews.length).toFixed(1),
+      examPattern: (totals.examPattern / reviews.length).toFixed(1),
+      relativeMarks: (totals.relativeMarks / reviews.length).toFixed(1)
+    };
+  }
+
+  return res.status(200).json(
+    new ApiResponse(200, {
+      subject,
+      reviewsCount: reviews.length,
+      avgRatings,
+      reviews
+    }, "Subject fetched successfully")
+  );
+});
 /* =========================
    GET SUBJECT REVIEWS (🔒)
    GET /api/subjects/:id/reviews

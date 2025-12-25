@@ -10,13 +10,13 @@ const SubjectDetail = () => {
   const { id } = useParams();
   const { user } = useAuth();
   const navigate = useNavigate();
-  
+
   const [subject, setSubject] = useState(null);
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
   const [hasReviewed, setHasReviewed] = useState(false);
-  
+
   const [formData, setFormData] = useState({
     difficulty: 3,
     content: 3,
@@ -24,6 +24,7 @@ const SubjectDetail = () => {
     relativeMarks: 3,
     textReview: ''
   });
+
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState('');
 
@@ -33,48 +34,44 @@ const SubjectDetail = () => {
 
   const fetchSubjectData = async () => {
     try {
-      const [subjectRes, reviewsRes] = await Promise.all([
-        api.get(`/subjects/${id}`),
-        api.get(`/reviews/subject/${id}`)
-      ]);
+      // Fetch single subject
+      const subjectRes = await api.get(`/subjects/${id}`);
+      setSubject(subjectRes.data.data);
 
-      setSubject(subjectRes.data);
-      setReviews(reviewsRes.data);
-      
-      const userReview = reviewsRes.data.find(r => r.userId === user._id);
+      // Fetch reviews
+      const reviewsRes = await api.get(`/subjects/${id}/reviews`);
+      const fetchedReviews = reviewsRes.data.data.reviews;
+      setReviews(fetchedReviews);
+
+      const userReview = fetchedReviews.find((r) => r.userId === user?._id);
       setHasReviewed(!!userReview);
-      
     } catch (err) {
       console.error('Failed to fetch subject:', err);
+      setSubject(null);
     } finally {
       setLoading(false);
     }
   };
 
   const handleRatingChange = (name, value) => {
-    setFormData({
-      ...formData,
-      [name]: value
-    });
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('');
     setSubmitting(true);
+    setError('');
 
     try {
-      await api.post(`/reviews/subject/${id}`, {
-        ratings: {
-          difficulty: formData.difficulty,
-          content: formData.content,
-          examPattern: formData.examPattern,
-          relativeMarks: formData.relativeMarks
-        },
+      // Flattened fields as backend expects
+      await api.post(`/subjects/${id}/reviews`, {
+        difficulty: formData.difficulty,
+        content: formData.content,
+        examPattern: formData.examPattern,
+        relativeMarks: formData.relativeMarks,
         textReview: formData.textReview
       });
 
-      alert('Review submitted successfully!');
       setShowForm(false);
       fetchSubjectData();
     } catch (err) {
@@ -88,9 +85,16 @@ const SubjectDetail = () => {
     return (
       <>
         <Navbar />
-        <div style={styles.container}>
-          <div style={styles.loading}>Loading...</div>
-        </div>
+        <div style={styles.loading}>Loading...</div>
+      </>
+    );
+  }
+
+  if (!subject) {
+    return (
+      <>
+        <Navbar />
+        <div style={styles.loading}>Subject not found.</div>
       </>
     );
   }
@@ -100,13 +104,13 @@ const SubjectDetail = () => {
       <Navbar />
       <div style={styles.container}>
         <button onClick={() => navigate('/dashboard')} style={styles.backBtn}>
-          ← Back to Dashboard
+          ← Back
         </button>
 
         <div style={styles.header}>
           <div>
             <h1 style={styles.title}>{subject.name}</h1>
-            <p style={styles.department}>{subject.department}</p>
+            <p style={styles.department}>{subject.type}</p>
             <div style={styles.campusBadges}>
               {subject.campus === 'both' ? (
                 <>
@@ -118,7 +122,7 @@ const SubjectDetail = () => {
               )}
             </div>
           </div>
-          
+
           {!hasReviewed && !showForm && (
             <button onClick={() => setShowForm(true)} style={styles.reviewBtn}>
               Write Review
@@ -127,76 +131,53 @@ const SubjectDetail = () => {
         </div>
 
         {showForm && (
-          <div style={styles.formCard} className="slide-up">
-            <h2 style={styles.formTitle}>Submit Your Review</h2>
+          <form onSubmit={handleSubmit} style={styles.formCard}>
             {error && <div style={styles.error}>{error}</div>}
-            
-            <form onSubmit={handleSubmit}>
-              <RatingSlider
-                label="Difficulty Level"
-                value={formData.difficulty}
-                onChange={handleRatingChange}
-                name="difficulty"
-              />
-              <RatingSlider
-                label="Course Content Usefulness"
-                value={formData.content}
-                onChange={handleRatingChange}
-                name="content"
-              />
-              <RatingSlider
-                label="Exam Pattern Difficulty"
-                value={formData.examPattern}
-                onChange={handleRatingChange}
-                name="examPattern"
-              />
-              <RatingSlider
-                label="Relative Marking Advantage"
-                value={formData.relativeMarks}
-                onChange={handleRatingChange}
-                name="relativeMarks"
-              />
-              
-              <div style={styles.textAreaGroup}>
-                <label style={styles.label}>Your Review (Optional)</label>
-                <textarea
-                  value={formData.textReview}
-                  onChange={(e) => setFormData({...formData, textReview: e.target.value})}
-                  placeholder="Share your experience with this subject..."
-                  rows="4"
-                  style={styles.textarea}
-                />
-              </div>
 
-              <div style={styles.formActions}>
-                <button
-                  type="button"
-                  onClick={() => setShowForm(false)}
-                  style={styles.cancelBtn}
-                >
-                  Cancel
-                </button>
-                <button
-                  type="submit"
-                  disabled={submitting}
-                  style={{
-                    ...styles.submitBtn,
-                    opacity: submitting ? 0.6 : 1,
-                    cursor: submitting ? 'not-allowed' : 'pointer'
-                  }}
-                >
-                  {submitting ? 'Submitting...' : 'Submit Review'}
-                </button>
-              </div>
-            </form>
-          </div>
+            {['difficulty', 'content', 'examPattern', 'relativeMarks'].map((key) => (
+              <RatingSlider
+                key={key}
+                name={key}
+                value={formData[key]}
+                onChange={handleRatingChange}
+                label={key
+                  .replace(/([A-Z])/g, ' $1')
+                  .replace(/^./, str => str.toUpperCase())}
+              />
+            ))}
+
+            <textarea
+              placeholder="Optional review"
+              value={formData.textReview}
+              onChange={(e) => setFormData({ ...formData, textReview: e.target.value })}
+              style={styles.textarea}
+            />
+
+            <div style={styles.formActions}>
+              <button
+                type="button"
+                onClick={() => setShowForm(false)}
+                style={styles.cancelBtn}
+              >
+                Cancel
+              </button>
+              <button
+                type="submit"
+                disabled={submitting}
+                style={{
+                  ...styles.submitBtn,
+                  opacity: submitting ? 0.6 : 1,
+                  cursor: submitting ? 'not-allowed' : 'pointer'
+                }}
+              >
+                {submitting ? 'Submitting...' : 'Submit Review'}
+              </button>
+            </div>
+          </form>
         )}
 
         <div style={styles.reviewsSection}>
-          <h2 style={styles.reviewsTitle}>
-            Reviews ({reviews.length})
-          </h2>
-          
+          <h2 style={styles.reviewsTitle}>Reviews ({reviews.length})</h2>
           {reviews.length === 0 ? (
             <p style={styles.noReviews}>No reviews yet. Be the first to review!</p>
           ) : (
