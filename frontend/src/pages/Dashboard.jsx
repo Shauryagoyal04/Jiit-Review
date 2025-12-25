@@ -60,7 +60,9 @@ const Dashboard = () => {
       <Navbar />
       <div style={styles.container}>
         <div style={styles.header}>
-          <h1 style={styles.pageTitle}>Campus {user.campus} Reviews</h1>
+          <h1 style={styles.pageTitle} className="gradient-text">
+            Campus {user.campus} Reviews
+          </h1>
           <p style={styles.disclaimer}>
             All reviews are anonymous. Rate honestly and respectfully.
           </p>
@@ -89,54 +91,59 @@ const Dashboard = () => {
 
         {activeTab === 'teachers' ? (
           <div style={styles.grid}>
-            {teachers.map((teacher) => (
+            {teachers.map((teacher, idx) => (
               <div
                 key={teacher._id}
-                style={styles.card}
+                style={{...styles.card, animationDelay: `${idx * 0.1}s`}}
+                className="fade-in"
                 onClick={() => navigate(`/teacher/${teacher._id}`)}
               >
-                <h3 style={styles.cardTitle}>{teacher.name}</h3>
-                <p style={styles.department}>{teacher.department}</p>
-                <div style={styles.ratingBadge}>
-                  <span style={styles.ratingLabel}>Avg Rating:</span>
-                  <span style={styles.ratingValue}>
-                    {calculateAvgRating(teacher.reviews)}/5
-                  </span>
+                <div style={styles.cardBadge}>Campus {teacher.campus}</div>
+                <div style={styles.cardHeader}>
+                  <div>
+                    <h3 style={styles.cardTitle}>{teacher.name}</h3>
+                    <p style={styles.cardSubtitle}>{teacher.department}</p>
+                  </div>
+                  <div style={styles.ratingBadge}>
+                    ⭐ {calculateAvgRating(teacher.reviews)}
+                  </div>
                 </div>
                 <p style={styles.reviewCount}>
-                  {teacher.reviews?.length || 0} reviews
+                  📝 {teacher.reviews?.length || 0} reviews
                 </p>
               </div>
             ))}
           </div>
         ) : (
           <div style={styles.grid}>
-            {subjects.map((subject) => (
+            {subjects.map((subject, idx) => (
               <div
                 key={subject._id}
-                style={styles.card}
+                style={{...styles.card, animationDelay: `${idx * 0.1}s`}}
+                className="fade-in"
                 onClick={() => navigate(`/subject/${subject._id}`)}
               >
-                <h3 style={styles.cardTitle}>{subject.name}</h3>
-                <p style={styles.department}>{subject.department}</p>
                 <div style={styles.campusBadges}>
                   {subject.campus === 'both' ? (
                     <>
-                      <span style={styles.campusBadge}>Campus 62</span>
-                      <span style={styles.campusBadge}>Campus 128</span>
+                      <span style={styles.cardBadge}>Campus 62</span>
+                      <span style={styles.cardBadge}>Campus 128</span>
                     </>
                   ) : (
-                    <span style={styles.campusBadge}>Campus {subject.campus}</span>
+                    <span style={styles.cardBadge}>Campus {subject.campus}</span>
                   )}
                 </div>
-                <div style={styles.ratingBadge}>
-                  <span style={styles.ratingLabel}>Avg Rating:</span>
-                  <span style={styles.ratingValue}>
-                    {calculateAvgRating(subject.reviews)}/5
-                  </span>
+                <div style={styles.cardHeader}>
+                  <div>
+                    <h3 style={styles.cardTitle}>{subject.name}</h3>
+                    <p style={styles.cardSubtitle}>{subject.department}</p>
+                  </div>
+                  <div style={styles.ratingBadge}>
+                    ⭐ {calculateAvgRating(subject.reviews)}
+                  </div>
                 </div>
                 <p style={styles.reviewCount}>
-                  {subject.reviews?.length || 0} reviews
+                  📝 {subject.reviews?.length || 0} reviews
                 </p>
               </div>
             ))}
@@ -149,76 +156,76 @@ const Dashboard = () => {
 
 const styles = {
   container: {
-    maxWidth: '1200px',
+    maxWidth: '1280px',
     margin: '0 auto',
-    padding: '2rem 1rem'
+    padding: '3rem 2rem'
   },
   header: {
-    marginBottom: '2rem'
+    textAlign: 'center',
+    marginBottom: '3rem'
   },
   pageTitle: {
-    fontSize: '2rem',
-    fontWeight: 'bold',
-    color: '#111827',
-    marginBottom: '0.5rem'
+    fontSize: '3rem',
+    fontWeight: '800',
+    marginBottom: '1rem'
   },
   disclaimer: {
-    color: '#6b7280',
-    fontSize: '0.875rem'
+    color: 'var(--text-secondary)',
+    fontSize: '1.125rem'
   },
   loading: {
     textAlign: 'center',
     fontSize: '1.125rem',
-    color: '#6b7280',
+    color: 'var(--text-secondary)',
     padding: '3rem'
   },
   tabs: {
     display: 'flex',
-    gap: '0.5rem',
-    marginBottom: '2rem',
-    borderBottom: '2px solid #e5e7eb'
+    justifyContent: 'center',
+    gap: '1rem',
+    marginBottom: '3rem'
   },
   tab: {
-    padding: '0.75rem 1.5rem',
-    border: 'none',
-    backgroundColor: 'transparent',
-    color: '#6b7280',
-    fontSize: '0.875rem',
-    fontWeight: '500',
+    padding: '0.875rem 2rem',
+    background: 'var(--bg-primary)',
+    border: '2px solid var(--border)',
+    borderRadius: '12px',
+    color: 'var(--text-secondary)',
+    fontWeight: '600',
     cursor: 'pointer',
-    borderBottom: '2px solid transparent',
-    marginBottom: '-2px'
+    transition: 'all 0.3s ease',
+    fontSize: '0.938rem'
   },
   activeTab: {
-    color: '#3b82f6',
-    borderBottomColor: '#3b82f6'
+    background: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)',
+    color: 'white',
+    borderColor: 'transparent',
+    boxShadow: '0 10px 20px rgba(59, 130, 246, 0.3)',
+    transform: 'translateY(-2px)'
   },
   grid: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-    gap: '1.5rem'
+    gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
+    gap: '2rem'
   },
   card: {
-    backgroundColor: '#fff',
-    border: '1px solid #e5e7eb',
-    borderRadius: '0.5rem',
-    padding: '1.5rem',
+    background: 'var(--bg-primary)',
+    border: '1px solid var(--border)',
+    borderRadius: '20px',
+    padding: '2rem',
     cursor: 'pointer',
-    transition: 'all 0.2s',
-    ':hover': {
-      boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-      transform: 'translateY(-2px)'
-    }
+    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+    position: 'relative',
+    overflow: 'hidden'
   },
-  cardTitle: {
-    fontSize: '1.125rem',
+  cardBadge: {
+    display: 'inline-block',
+    padding: '0.375rem 0.875rem',
+    background: 'rgba(59, 130, 246, 0.1)',
+    color: 'var(--primary)',
+    borderRadius: '8px',
+    fontSize: '0.813rem',
     fontWeight: '600',
-    color: '#111827',
-    marginBottom: '0.5rem'
-  },
-  department: {
-    fontSize: '0.875rem',
-    color: '#6b7280',
     marginBottom: '1rem'
   },
   campusBadges: {
@@ -226,32 +233,40 @@ const styles = {
     gap: '0.5rem',
     marginBottom: '1rem'
   },
-  campusBadge: {
-    fontSize: '0.75rem',
-    padding: '0.25rem 0.5rem',
-    backgroundColor: '#dbeafe',
-    color: '#1e40af',
-    borderRadius: '0.25rem',
-    fontWeight: '500'
-  },
-  ratingBadge: {
+  cardHeader: {
     display: 'flex',
-    alignItems: 'center',
-    gap: '0.5rem',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    marginBottom: '1rem'
+  },
+  cardTitle: {
+    fontSize: '1.375rem',
+    fontWeight: '700',
+    color: 'var(--text-primary)',
     marginBottom: '0.5rem'
   },
-  ratingLabel: {
-    fontSize: '0.875rem',
-    color: '#4b5563'
+  cardSubtitle: {
+    color: 'var(--text-secondary)',
+    fontSize: '0.875rem'
   },
-  ratingValue: {
-    fontSize: '1.25rem',
-    fontWeight: 'bold',
-    color: '#3b82f6'
+  ratingBadge: {
+    background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
+    color: 'white',
+    padding: '0.5rem 1rem',
+    borderRadius: '12px',
+    fontWeight: '700',
+    fontSize: '1.125rem',
+    boxShadow: '0 4px 12px rgba(16, 185, 129, 0.3)',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '0.25rem'
   },
   reviewCount: {
-    fontSize: '0.75rem',
-    color: '#9ca3af'
+    color: 'var(--text-secondary)',
+    fontSize: '0.875rem',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '0.5rem'
   }
 };
 
