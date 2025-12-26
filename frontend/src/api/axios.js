@@ -25,13 +25,17 @@ api.interceptors.request.use(
 api.interceptors.response.use(
   (response) => response,
   (error) => {
-    if (error.response?.status === 401) {
-      localStorage.removeItem('token');
-      localStorage.removeItem('user');
-      window.location.href = '/login';
+    const status = error.response?.status;
+    const url = error.config?.url;
+
+    // Only auto-logout if token is invalid on protected routes
+    if (status === 401 && url !== "/auth/login") {
+      localStorage.removeItem("token");
     }
+
     return Promise.reject(error);
   }
 );
+
 
 export default api;

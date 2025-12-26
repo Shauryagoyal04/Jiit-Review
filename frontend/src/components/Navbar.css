@@ -1,0 +1,172 @@
+.navbar {
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1.125rem;
+  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3);
+}
+
+.navbar-brand-text {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.navbar-campus {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3);
+  animation: pulse 2s infinite;
+}
+
+.navbar-user {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.navbar-theme-toggle {
+  background: var(--bg-secondary);
+  border: 2px solid var(--border);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.navbar-logout {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  border: none;
+  padding: 0.625rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(239, 68, 68, 0.3);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 0.75rem 1rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .navbar-right {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .navbar-brand-text {
+    font-size: 1.25rem;
+  }
+
+  .navbar-user {
+    order: 3;
+  }
+}
+
+/* Small phones (480px and below) */
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .navbar-logo {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+
+  .navbar-brand-text {
+    font-size: 1.1rem;
+  }
+
+  .navbar-right {
+    gap: 0.75rem;
+  }
+
+  .navbar-campus {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .navbar-theme-toggle {
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+  }
+
+  .navbar-logout {
+    padding: 0.45rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .navbar-user {
+    font-size: 0.75rem;
+  }
+}
+
+/* Pulse animation for campus badge */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}

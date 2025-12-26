@@ -32,54 +32,53 @@ const SubjectDetail = () => {
     fetchSubjectData();
   }, [id]);
 
-  const fetchSubjectData = async () => {
-    try {
-      // Fetch single subject
-      const subjectRes = await api.get(`/subjects/${id}`);
-      setSubject(subjectRes.data.data);
+  // Fetch reviews + subject
+const fetchSubjectData = async () => {
+  try {
+    const subjectRes = await api.get(`/subjects/${id}`);
+    setSubject(subjectRes.data.data.subject);
 
-      // Fetch reviews
-      const reviewsRes = await api.get(`/subjects/${id}/reviews`);
-      const fetchedReviews = reviewsRes.data.data.reviews;
-      setReviews(fetchedReviews);
+    const reviewsRes = await api.get(`/subjects/${id}/reviews`);
+    const fetchedReviews = reviewsRes.data.data.reviews;
+    setReviews(fetchedReviews);
 
-      const userReview = fetchedReviews.find((r) => r.userId === user?._id);
-      setHasReviewed(!!userReview);
-    } catch (err) {
-      console.error('Failed to fetch subject:', err);
-      setSubject(null);
-    } finally {
-      setLoading(false);
-    }
-  };
+    const userReview = fetchedReviews.find(
+      r => r.userId && r.userId.toString() === user?._id.toString()
+    );
+    setHasReviewed(!!userReview);
+  } catch (err) {
+    console.error('Failed to fetch subject:', err);
+    setSubject(null);
+  } finally {
+    setLoading(false);
+  }
+};
 
-  const handleRatingChange = (name, value) => {
-    setFormData({ ...formData, [name]: value });
-  };
+// Submit review
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setSubmitting(true);
+  setError('');
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setSubmitting(true);
-    setError('');
+  try {
+    await api.post(`/subjects/${id}/reviews`, {
+      difficulty: formData.difficulty,
+      content: formData.content,
+      examPattern: formData.examPattern,
+      relativeMarks: formData.relativeMarks,
+      textReview: formData.textReview
+    });
 
-    try {
-      // Flattened fields as backend expects
-      await api.post(`/subjects/${id}/reviews`, {
-        difficulty: formData.difficulty,
-        content: formData.content,
-        examPattern: formData.examPattern,
-        relativeMarks: formData.relativeMarks,
-        textReview: formData.textReview
-      });
+    setShowForm(false);
+    setHasReviewed(true);
+    fetchSubjectData();
+  } catch (err) {
+    setError(err.response?.data?.message || 'Failed to submit review');
+  } finally {
+    setSubmitting(false);
+  }
+};
 
-      setShowForm(false);
-      fetchSubjectData();
-    } catch (err) {
-      setError(err.response?.data?.message || 'Failed to submit review');
-    } finally {
-      setSubmitting(false);
-    }
-  };
 
   if (loading) {
     return (

@@ -1,11 +1,12 @@
 import React from 'react';
+import './RatingSlide.css';
 
 const RatingSlider = ({ label, value, onChange, name }) => {
   return (
-    <div style={styles.container}>
-      <div style={styles.header}>
-        <label style={styles.label}>{label}</label>
-        <span style={styles.value}>{value}/5</span>
+    <div className="rating-container">
+      <div className="rating-header">
+        <label className="rating-label">{label}</label>
+        <span className="rating-value">{value}/5</span>
       </div>
       <input
         type="range"
@@ -13,9 +14,9 @@ const RatingSlider = ({ label, value, onChange, name }) => {
         max="5"
         value={value}
         onChange={(e) => onChange(name, parseInt(e.target.value))}
-        style={styles.slider}
+        className="rating-slider"
       />
-      <div style={styles.labels}>
+      <div className="rating-labels">
         <span>1</span>
         <span>2</span>
         <span>3</span>
@@ -24,43 +25,6 @@ const RatingSlider = ({ label, value, onChange, name }) => {
       </div>
     </div>
   );
-};
-
-const styles = {
-  container: {
-    marginBottom: '1.5rem'
-  },
-  header: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: '0.5rem'
-  },
-  label: {
-    fontSize: '0.875rem',
-    fontWeight: '500',
-    color: '#f0f0f0df'
-  },
-  value: {
-    fontSize: '1rem',
-    fontWeight: 'bold',
-    color: '#3b82f6'
-  },
-  slider: {
-    width: '100%',
-    height: '8px',
-    borderRadius: '4px',
-    outline: 'none',
-    background: '#e5e7eb',
-    cursor: 'pointer'
-  },
-  labels: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    marginTop: '0.25rem',
-    fontSize: '0.75rem',
-    color: '#9aa4b8'
-  }
 };
 
 export default RatingSlider;

@@ -1,4 +1,5 @@
 import React, { createContext, useState, useContext, useEffect } from "react";
+import api from "../api/axios";
 
 const AuthContext = createContext(null);
 
@@ -6,34 +7,57 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const storedUser = localStorage.getItem("user");
-    const token = localStorage.getItem("token");
+  /* =========================
+     LOAD USER ON APP START
+  ========================= */
+useEffect(() => {
+  const token = localStorage.getItem("token");
 
-    if (storedUser && token) {
-      try {
-        const parsedUser = JSON.parse(storedUser);
-        setUser(parsedUser);
-      } catch (error) {
-        console.error("Invalid user data in localStorage");
-        localStorage.removeItem("user");
-        localStorage.removeItem("token");
-        setUser(null);
-      }
-    }
-
+  if (!token) {
     setLoading(false);
-  }, []);
+    return;
+  }
 
-  const login = (userData, token) => {
-    localStorage.setItem("token", token);
-    localStorage.setItem("user", JSON.stringify(userData));
-    setUser(userData);
+  const fetchUser = async () => {
+    try {
+      const res = await api.get("/auth/me");
+      setUser(res.data.data);
+    } catch (err) {
+      console.error("Auth check failed");
+      localStorage.removeItem("token");
+      setUser(null);
+    } finally {
+      setLoading(false);
+    }
   };
 
+  fetchUser();
+}, []);
+
+
+  /* =========================
+     LOGIN
+  ========================= */
+  const login = async (token) => {
+  localStorage.setItem('token', token);
+  try {
+    const res = await api.get('/auth/me');
+    setUser(res.data.data);
+  } catch (err) {
+    console.error('Login fetch failed', err);
+    localStorage.removeItem('token');
+    setUser(null);
+  }
+};
+
+
+
+
+  /* =========================
+     LOGOUT
+  ========================= */
   const logout = () => {
     localStorage.removeItem("token");
-    localStorage.removeItem("user");
     setUser(null);
   };
 

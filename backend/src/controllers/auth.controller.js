@@ -134,3 +134,31 @@ export const login = asyncHandler(async (req, res) => {
     new ApiResponse(200, { token }, "Login successful")
   );
 });
+
+// LOGOUT (optional, for client-side token handling)
+export const logout = asyncHandler(async (req, res) => {
+  return res.status(200).json(
+    new ApiResponse(200, null, "Logged out successfully")
+  );
+});
+/// =========================
+// GET ME (🔒)
+// =========================
+export const getMe = asyncHandler(async (req, res) => {
+  const user = req.user;
+
+  return res.json(
+    new ApiResponse(
+      200,
+      {
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+        campus: user.campus,
+        role: user.role,
+        isVerified: user.isVerified
+      },
+      "User fetched successfully"
+    )
+  );
+});

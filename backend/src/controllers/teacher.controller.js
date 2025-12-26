@@ -38,21 +38,14 @@ export const getTeacherReviews = asyncHandler(async (req, res) => {
   }
 
   const reviews = await TeacherReview.find({ teacherId })
-    .select("-userId") // 🔐 anonymity
-    .sort({ createdAt: -1 });
+    .sort({ createdAt: -1 }); // DO NOT remove userId
 
   let avgRatings = null;
   let overallRating = null;
 
   if (reviews.length > 0) {
-    const totals = {
-      lateEntry: 0,
-      taMarks: 0,
-      clarity: 0,
-      attendance: 0
-    };
-
-    reviews.forEach((r) => {
+    const totals = { lateEntry: 0, taMarks: 0, clarity: 0, attendance: 0 };
+    reviews.forEach(r => {
       totals.lateEntry += r.ratings.lateEntry;
       totals.taMarks += r.ratings.taMarks;
       totals.clarity += r.ratings.clarity;
@@ -67,26 +60,12 @@ export const getTeacherReviews = asyncHandler(async (req, res) => {
     };
 
     overallRating = Number(
-      (
-        (avgRatings.lateEntry +
-          avgRatings.taMarks +
-          avgRatings.clarity +
-          avgRatings.attendance) / 4
-      ).toFixed(1)
+      ((avgRatings.lateEntry + avgRatings.taMarks + avgRatings.clarity + avgRatings.attendance) / 4).toFixed(1)
     );
   }
 
   return res.json(
-    new ApiResponse(
-      200,
-      {
-        reviewsCount: reviews.length,
-        avgRatings,
-        overallRating,
-        reviews
-      },
-      "Teacher reviews fetched successfully"
-    )
+    new ApiResponse(200, { reviewsCount: reviews.length, avgRatings, overallRating, reviews }, "Teacher reviews fetched successfully")
   );
 });
 

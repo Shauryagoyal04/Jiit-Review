@@ -1,0 +1,77 @@
+.rating-container {
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.rating-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.rating-label {
+  font-size: clamp(0.8rem, 2vw, 0.875rem);
+  font-weight: 500;
+  color: #374151;
+}
+
+.rating-value {
+  font-size: clamp(0.95rem, 2.5vw, 1rem);
+  font-weight: bold;
+  color: #3b82f6;
+}
+
+.rating-slider {
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  outline: none;
+  background: #e5e7eb;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.rating-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: clamp(16px, 4vw, 20px);
+  height: clamp(16px, 4vw, 20px);
+  border-radius: 50%;
+  background: #3b82f6;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.rating-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.25rem;
+  font-size: clamp(0.65rem, 1.8vw, 0.75rem);
+  color: #6b7280;
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .rating-container {
+    margin-bottom: 1.25rem;
+  }
+  
+  .rating-header {
+    gap: 1rem;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .rating-container {
+    margin-bottom: 1rem;
+  }
+  
+  .rating-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+}

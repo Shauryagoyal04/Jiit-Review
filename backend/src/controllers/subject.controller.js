@@ -85,7 +85,6 @@ export const getSubjectReviews = asyncHandler(async (req, res) => {
   }
 
   const reviews = await SubjectReview.find({ subjectId })
-    .populate("userId", "email")
     .sort({ createdAt: -1 });
 
   let avgRatings = null;

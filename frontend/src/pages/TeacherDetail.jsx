@@ -47,7 +47,9 @@ const TeacherDetail = () => {
       setReviews(fetchedReviews);
 
       // Check if current user already reviewed
-      const userReview = fetchedReviews.find((r) => r.userId === user?._id);
+      const userReview = fetchedReviews.find(
+        (r) => r.userId && r.userId.toString() === user?._id?.toString()
+      );
       setHasReviewed(!!userReview);
 
     } catch (err) {
@@ -83,6 +85,7 @@ const TeacherDetail = () => {
       });
 
       setShowForm(false);
+      setHasReviewed(true);
       fetchTeacherData(); // refresh reviews
     } catch (err) {
       setError(err.response?.data?.message || "Failed to submit review");

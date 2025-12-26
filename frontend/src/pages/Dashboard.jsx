@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import Navbar from '../components/Navbar';
 import api from '../api/axios';
+import './Dashboard.css';
 
 const Dashboard = () => {
   const { user } = useAuth();
@@ -15,7 +16,10 @@ const Dashboard = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetchData();
+    if (user?.campus) {
+      fetchData();
+    }
+    // eslint-disable-next-line
   }, [user]);
 
   const fetchData = async () => {
@@ -59,14 +63,14 @@ const Dashboard = () => {
 
   const list =
     activeTab === 'teachers'
-      ? (Array.isArray(teachers) ? teachers : [])
-      : (Array.isArray(subjects) ? subjects : []);
+      ? teachers
+      : subjects;
 
   if (loading) {
     return (
       <>
         <Navbar />
-        <div style={styles.center}>Loading...</div>
+        <div className="dashboard-loading">Loading...</div>
       </>
     );
   }
@@ -75,9 +79,12 @@ const Dashboard = () => {
     return (
       <>
         <Navbar />
-        <div style={styles.center}>
+        <div className="dashboard-error">
           {error}
-          <button style={styles.retry} onClick={fetchData}>
+          <button
+            className="dashboard-retry-button"
+            onClick={fetchData}
+          >
             Retry
           </button>
         </div>
@@ -88,65 +95,68 @@ const Dashboard = () => {
   return (
     <>
       <Navbar />
-      <div style={styles.container}>
-        <header style={styles.header}>
-          <h1 style={styles.title}>Campus {user.campus} Reviews</h1>
-          <p style={styles.subtitle}>
+
+      <div className="dashboard-container">
+        <header className="dashboard-header">
+          <h1 className="dashboard-title">
+            Campus {user.campus} Reviews
+          </h1>
+          <p className="dashboard-disclaimer">
             All reviews are anonymous. Rate honestly and respectfully.
           </p>
         </header>
 
-        <div style={styles.tabs}>
+        <div className="dashboard-tabs">
           <button
-            style={{ ...styles.tab, ...(activeTab === 'teachers' && styles.activeTab) }}
+            className={`dashboard-tab ${activeTab === 'teachers' ? 'active' : ''}`}
             onClick={() => setActiveTab('teachers')}
           >
             Teachers ({teachers.length})
           </button>
+
           <button
-            style={{ ...styles.tab, ...(activeTab === 'subjects' && styles.activeTab) }}
+            className={`dashboard-tab ${activeTab === 'subjects' ? 'active' : ''}`}
             onClick={() => setActiveTab('subjects')}
           >
             Elective Subjects ({subjects.length})
           </button>
         </div>
 
-        <div style={styles.grid}>
+        <div className="dashboard-grid">
           {list.length === 0 && (
-            <div style={styles.empty}>No data available</div>
+            <div className="dashboard-empty-state">
+              No data available
+            </div>
           )}
 
           {list.map((item) => (
             <div
               key={item._id}
-              style={styles.card}
+              className="dashboard-card fade-in"
               onClick={() =>
                 navigate(`/${activeTab.slice(0, -1)}/${item._id}`)
               }
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-4px)';
-                e.currentTarget.style.boxShadow = '0 12px 30px rgba(0,0,0,0.15)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = 'none';
-              }}
             >
-              <span style={styles.badge}>
+              <span className="dashboard-card-badge">
                 Campus {item.campus || user.campus}
               </span>
 
-              <div style={styles.cardHeader}>
+              <div className="dashboard-card-header">
                 <div>
-                  <h3 style={styles.cardTitle}>{item.name}</h3>
-                  <p style={styles.cardSub}>{item.department}</p>
+                  <h3 className="dashboard-card-title">
+                    {item.name}
+                  </h3>
+                  <p className="dashboard-card-subtitle">
+                    {item.department}
+                  </p>
                 </div>
-                <div style={styles.rating}>
+
+                <div className="dashboard-rating-badge">
                   ⭐ {avgRating(item.reviews)}
                 </div>
               </div>
 
-              <p style={styles.count}>
+              <p className="dashboard-review-count">
                 📝 {item.reviews?.length || 0} reviews
               </p>
             </div>
@@ -155,133 +165,6 @@ const Dashboard = () => {
       </div>
     </>
   );
-};
-
-const styles = {
-  container: {
-    maxWidth: '1280px',
-    margin: '0 auto',
-    padding: 'clamp(1rem, 3vw, 2rem)'
-  },
-
-  header: {
-    textAlign: 'center',
-    marginBottom: '2rem'
-  },
-
-  title: {
-    fontSize: 'clamp(1.6rem, 4vw, 3rem)',
-    fontWeight: 800
-  },
-
-  subtitle: {
-    marginTop: '0.5rem',
-    color: 'var(--text-secondary)',
-    fontSize: 'clamp(0.85rem, 2.5vw, 1rem)'
-  },
-
-  tabs: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-    gap: '0.75rem',
-    marginBottom: '2rem'
-  },
-
-  tab: {
-    flex: '1 1 150px',
-    maxWidth: '220px',
-    padding: '0.75rem',
-    borderRadius: '12px',
-    borderWidth: '2px',
-    borderStyle: 'solid',
-    borderColor: 'var(--border)',
-    background: 'var(--bg-primary)',
-    cursor: 'pointer',
-    fontWeight: 600
-  },
-
-  activeTab: {
-    background: 'linear-gradient(135deg,#3b82f6,#2563eb)',
-    color: '#fff',
-    borderColor: 'transparent'
-  },
-
-  grid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-    gap: '1.25rem'
-  },
-
-  card: {
-    background: 'var(--bg-primary)',
-    border: '1px solid var(--border)',
-    borderRadius: '16px',
-    padding: '1.25rem',
-    cursor: 'pointer',
-    transition: '0.3s'
-  },
-
-  badge: {
-    display: 'inline-block',
-    fontSize: '0.75rem',
-    padding: '0.35rem 0.7rem',
-    borderRadius: '8px',
-    background: 'rgba(59,130,246,0.1)',
-    marginBottom: '1rem'
-  },
-
-  cardHeader: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    gap: '0.75rem'
-  },
-
-  cardTitle: {
-    fontSize: '1.1rem',
-    fontWeight: 700
-  },
-
-  cardSub: {
-    fontSize: '0.85rem',
-    color: 'var(--text-secondary)'
-  },
-
-  rating: {
-    background: 'linear-gradient(135deg,#10b981,#059669)',
-    color: '#fff',
-    padding: '0.4rem 0.7rem',
-    borderRadius: '10px',
-    fontWeight: 700,
-    whiteSpace: 'nowrap'
-  },
-
-  count: {
-    marginTop: '0.75rem',
-    fontSize: '0.85rem',
-    color: 'var(--text-secondary)'
-  },
-
-  empty: {
-    gridColumn: '1 / -1',
-    textAlign: 'center',
-    padding: '2rem'
-  },
-
-  center: {
-    padding: '3rem',
-    textAlign: 'center'
-  },
-
-  retry: {
-    marginTop: '1rem',
-    padding: '0.6rem 1.4rem',
-    borderRadius: '10px',
-    border: 'none',
-    background: '#2563eb',
-    color: '#fff',
-    cursor: 'pointer'
-  }
 };
 
 export default Dashboard;

@@ -33,11 +33,7 @@ const handleSubmit = async (e) => {
 
     const token = response.data.data.token;
 
-    const user = {
-      email: formData.email
-    };
-
-    login(user, token);
+    await login(token);
     navigate('/dashboard');
   } catch (err) {
     setError(err.response?.data?.message || 'Login failed');
