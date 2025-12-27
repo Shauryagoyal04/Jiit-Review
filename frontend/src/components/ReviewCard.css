@@ -1,160 +1,181 @@
+/* ============================================
+   REVIEW CARD STYLES
+   ============================================ */
+
 .review-card {
-  background-color: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 0.5rem;
-  padding: clamp(1rem, 3vw, 1.5rem);
-  margin-bottom: 1rem;
-  width: 100%;
+  width: 100% !important;
+  margin-bottom: 1.25rem !important;
+  padding: 1.25rem 1.5rem !important;
+
+  background: linear-gradient(
+    135deg,
+    rgba(51, 65, 85, 0.6),
+    rgba(30, 41, 59, 0.6)
+  ) !important;
+  
+  backdrop-filter: blur(8px);
+
+  border-radius: 16px !important;
+  border: 1px solid rgba(148, 163, 184, 0.15) !important;
+
+  position: relative;
+  overflow: hidden;
+
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
 }
 
+/* Subtle left accent bar */
+.review-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(
+    180deg,
+    rgba(59, 130, 246, 0.6),
+    rgba(139, 92, 246, 0.6)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.review-card:hover::before {
+  opacity: 1;
+}
+
+.review-card:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.12),
+    rgba(51, 65, 85, 0.7)
+  ) !important;
+  border-color: rgba(59, 130, 246, 0.3) !important;
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(59, 130, 246, 0.2) !important;
+  transform: translateY(-2px);
+}
+
+/* Header row */
 .review-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 0.75rem !important;
+  padding-bottom: 0.65rem !important;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1) !important;
 }
 
-.review-identity {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
+/* Verified student */
 .review-anonymous {
-  font-size: clamp(0.8rem, 2vw, 0.875rem);
-  font-weight: 600;
-  color: #374151;
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  color: #cbd5e1 !important;
+  letter-spacing: -0.01em;
+  
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.4rem !important;
+  
+  transition: color 0.2s ease;
 }
 
-.review-campus {
-  font-size: clamp(0.8rem, 2vw, 0.875rem);
-  color: #6b7280;
+.review-anonymous:hover {
+  color: #e2e8f0 !important;
 }
 
-.review-date {
-  font-size: clamp(0.7rem, 1.8vw, 0.75rem);
-  color: #9ca3af;
-}
-
-.review-overall {
-  display: flex;
+/* Small verified checkmark icon */
+.review-anonymous::before {
+  content: "✓";
+  display: inline-flex !important;
   align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-  padding: 0.75rem;
-  background-color: #f3f4f6;
-  border-radius: 0.5rem;
-  flex-wrap: wrap;
-}
-
-.review-overall-label {
-  font-size: clamp(0.8rem, 2vw, 0.875rem);
-  font-weight: 500;
-  color: #374151;
-}
-
-.review-overall-value {
-  font-size: clamp(1.1rem, 3vw, 1.25rem);
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6) !important;
+  border-radius: 50%;
+  font-size: 0.6rem;
+  color: white !important;
   font-weight: bold;
-  color: #3b82f6;
+  flex-shrink: 0;
 }
 
-.review-ratings {
-  margin-bottom: 1rem;
-}
-
-.rating-item {
-  display: grid;
-  grid-template-columns: 1fr auto 50px;
-  align-items: center;
-  gap: clamp(0.5rem, 2vw, 0.75rem);
-  margin-bottom: 0.75rem;
-  min-height: 2rem;
-}
-
-.rating-label {
-  font-size: clamp(0.8rem, 2vw, 0.875rem);
-  color: #4b5563;
-  justify-self: start;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.rating-bar {
-  height: 8px;
-  background-color: #e5e7eb;
-  border-radius: 4px;
-  overflow: hidden;
-  flex: 1;
-}
-
-.rating-fill {
-  height: 100%;
-  background-color: #3b82f6;
-  transition: width 0.3s ease;
-}
-
-.rating-value {
-  font-size: clamp(0.8rem, 2vw, 0.875rem);
-  font-weight: 600;
-  color: #374151;
-  text-align: right;
-  justify-self: end;
+/* Date */
+.review-date {
+  font-size: 0.75rem !important;
+  color: #94a3b8 !important;
+  font-weight: 500 !important;
   white-space: nowrap;
 }
 
-.review-text-section {
-  border-top: 1px solid #e5e7eb;
-  padding-top: 1rem;
-}
-
+/* Review text */
 .review-text {
-  font-size: clamp(0.8rem, 2.2vw, 0.875rem);
-  color: #4b5563;
-  line-height: 1.6;
-  margin: 0;
+  font-size: 0.95rem !important;
+  line-height: 1.7 !important;
+  color: #e2e8f0 !important;
+  margin: 0 !important;
+  letter-spacing: 0.01em;
 }
 
-/* Tablets */
+/* Muted text */
+.review-text.muted {
+  color: #94a3b8 !important;
+  font-style: italic !important;
+  opacity: 0.8;
+}
+
+/* Tablet */
 @media (max-width: 768px) {
   .review-card {
-    padding: 1rem;
-    margin-bottom: 0.875rem;
+    padding: 1.1rem 1.25rem !important;
   }
-  
-  .review-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.25rem;
+
+  .review-text {
+    font-size: 0.9rem !important;
   }
-  
-  .rating-item {
-    grid-template-columns: 1fr auto 45px;
-    gap: 0.5rem;
+
+  .review-anonymous {
+    font-size: 0.78rem !important;
+  }
+
+  .review-date {
+    font-size: 0.72rem !important;
   }
 }
 
-/* Phones */
+/* Mobile */
 @media (max-width: 480px) {
   .review-card {
-    padding: 0.875rem;
-    margin-bottom: 0.75rem;
+    padding: 1rem !important;
+    margin-bottom: 1rem !important;
   }
-  
-  .review-overall {
-    padding: 0.625rem;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.25rem;
+
+  .review-header {
+    margin-bottom: 0.65rem !important;
+    padding-bottom: 0.6rem !important;
   }
-  
-  .rating-item {
-    grid-template-columns: 1fr auto 40px;
-    gap: 0.375rem;
-    margin-bottom: 0.625rem;
+
+  .review-anonymous {
+    font-size: 0.75rem !important;
+    gap: 0.35rem !important;
+  }
+
+  .review-anonymous::before {
+    width: 13px;
+    height: 13px;
+    font-size: 0.55rem;
+  }
+
+  .review-date {
+    font-size: 0.7rem !important;
+  }
+
+  .review-text {
+    font-size: 0.875rem !important;
+    line-height: 1.6 !important;
   }
 }

@@ -5,7 +5,7 @@ import { ApiResponse } from "../utils/ApiResponse.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 import {User} from "../models/user.model.js";
 import sendEmail from "../utils/sendEmail.js";
-
+import { generateResetToken } from "../utils/generateResetToken.js";
 /* =========================
    REGISTER
 ========================= */
@@ -160,5 +160,101 @@ export const getMe = asyncHandler(async (req, res) => {
       },
       "User fetched successfully"
     )
+  );
+});
+
+export const forgotPassword = asyncHandler(async (req, res) => {
+  const { email } = req.body;
+
+  if (!email) {
+    throw new ApiError(400, "Email is required");
+  }
+
+  const user = await User.findOne({ email });
+
+  // ✅ Always return success (prevents email enumeration)
+  if (!user) {
+    return res.json(
+      new ApiResponse(200, null, "If email exists, reset link sent")
+    );
+  }
+
+  // 🔐 Generate token
+  const { resetToken, hashedToken } = generateResetToken();
+
+  user.resetPasswordToken = hashedToken;
+  user.resetPasswordExpire = Date.now() + 15 * 60 * 1000; // 15 minutes
+
+  await user.save({ validateBeforeSave: false });
+
+  const resetUrl = `${process.env.FRONTEND_URL}/reset-password/${resetToken}`;
+
+  const message = `
+Hello ${user.name || "User"},
+
+You requested a password reset.
+
+Click the link below to reset your password:
+${resetUrl}
+
+This link will expire in 15 minutes.
+
+If you did not request this, please ignore this email.
+
+Thanks,
+JIIT Reviews Team
+`;
+
+  try {
+    await sendEmail({
+      to: user.email,
+      subject: "Password Reset Request",
+      text: message
+    });
+
+    return res.json(
+      new ApiResponse(200, null, "Reset password link sent to email")
+    );
+  } catch (error) {
+    // ❌ Rollback token if email fails
+    user.resetPasswordToken = undefined;
+    user.resetPasswordExpire = undefined;
+
+    await user.save({ validateBeforeSave: false });
+
+    throw new ApiError(500, "Email could not be sent");
+  }
+});
+
+export const resetPassword = asyncHandler(async (req, res) => {
+  const { token } = req.params;
+  const { password } = req.body;
+
+  if (!password) {
+    throw new ApiError(400, "Password is required");
+  }
+
+  const hashedToken = crypto
+    .createHash("sha256")
+    .update(token)
+    .digest("hex");
+
+  const user = await User.findOne({
+    resetPasswordToken: hashedToken,
+    resetPasswordExpire: { $gt: Date.now() }
+  });
+
+  if (!user) {
+    throw new ApiError(400, "Invalid or expired token");
+  }
+
+  user.password = password;
+  user.resetPasswordToken = undefined;
+  user.resetPasswordExpire = undefined;
+
+  await user.save();
+
+  return res.json(
+    new ApiResponse(200, null, "Password reset successful")
   );
 });

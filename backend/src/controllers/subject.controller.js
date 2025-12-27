@@ -40,6 +40,8 @@ export const getSubjectById = asyncHandler(async (req, res) => {
   const reviews = await SubjectReview.find({ subjectId: id });
 
   let avgRatings = null;
+  let overallRating = null;
+
   if (reviews.length > 0) {
     const totals = {
       difficulty: 0,
@@ -56,11 +58,16 @@ export const getSubjectById = asyncHandler(async (req, res) => {
     });
 
     avgRatings = {
-      difficulty: (totals.difficulty / reviews.length).toFixed(1),
-      content: (totals.content / reviews.length).toFixed(1),
-      examPattern: (totals.examPattern / reviews.length).toFixed(1),
-      relativeMarks: (totals.relativeMarks / reviews.length).toFixed(1)
+      difficulty: parseFloat((totals.difficulty / reviews.length).toFixed(1)),
+      content: parseFloat((totals.content / reviews.length).toFixed(1)),
+      examPattern: parseFloat((totals.examPattern / reviews.length).toFixed(1)),
+      relativeMarks: parseFloat((totals.relativeMarks / reviews.length).toFixed(1))
     };
+
+    // Calculate overall rating (average of all 4 ratings)
+    overallRating = parseFloat((
+      (avgRatings.difficulty + avgRatings.content + avgRatings.examPattern + avgRatings.relativeMarks) / 4
+    ).toFixed(1));
   }
 
   return res.status(200).json(
@@ -68,6 +75,7 @@ export const getSubjectById = asyncHandler(async (req, res) => {
       subject,
       reviewsCount: reviews.length,
       avgRatings,
+      overallRating,
       reviews
     }, "Subject fetched successfully")
   );
@@ -76,6 +84,7 @@ export const getSubjectById = asyncHandler(async (req, res) => {
    GET SUBJECT REVIEWS (🔒)
    GET /api/subjects/:id/reviews
 ========================= */
+
 export const getSubjectReviews = asyncHandler(async (req, res) => {
   const subjectId = req.params.id;
 
@@ -88,6 +97,7 @@ export const getSubjectReviews = asyncHandler(async (req, res) => {
     .sort({ createdAt: -1 });
 
   let avgRatings = null;
+  let overallRating = null;
 
   if (reviews.length > 0) {
     const totals = {
@@ -105,11 +115,16 @@ export const getSubjectReviews = asyncHandler(async (req, res) => {
     });
 
     avgRatings = {
-      difficulty: (totals.difficulty / reviews.length).toFixed(1),
-      content: (totals.content / reviews.length).toFixed(1),
-      examPattern: (totals.examPattern / reviews.length).toFixed(1),
-      relativeMarks: (totals.relativeMarks / reviews.length).toFixed(1)
+      difficulty: parseFloat((totals.difficulty / reviews.length).toFixed(1)),
+      content: parseFloat((totals.content / reviews.length).toFixed(1)),
+      examPattern: parseFloat((totals.examPattern / reviews.length).toFixed(1)),
+      relativeMarks: parseFloat((totals.relativeMarks / reviews.length).toFixed(1))
     };
+
+    // Calculate overall rating (average of all 4 ratings)
+    overallRating = parseFloat((
+      (avgRatings.difficulty + avgRatings.content + avgRatings.examPattern + avgRatings.relativeMarks) / 4
+    ).toFixed(1));
   }
 
   return res.json(
@@ -118,13 +133,13 @@ export const getSubjectReviews = asyncHandler(async (req, res) => {
       {
         reviewsCount: reviews.length,
         avgRatings,
+        overallRating,
         reviews
       },
       "Subject reviews fetched successfully"
     )
   );
 });
-
 /* =========================
    ADD SUBJECT REVIEW (🔒)
    POST /api/subjects/:id/reviews

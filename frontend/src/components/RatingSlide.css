@@ -1,5 +1,9 @@
+/* ============================================
+   ENHANCED RATING SLIDER STYLES - IMPROVED VISIBILITY
+   ============================================ */
+
 .rating-container {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
   width: 100%;
 }
 
@@ -7,19 +11,22 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .rating-label {
-  font-size: clamp(0.8rem, 2vw, 0.875rem);
-  font-weight: 500;
-  color: #374151;
+  font-size: clamp(0.95rem, 2vw, 1rem) !important;
+  font-weight: 700 !important;
+  color: #f1f5f9 !important;
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .rating-value {
-  font-size: clamp(0.95rem, 2.5vw, 1rem);
-  font-weight: bold;
-  color: #3b82f6;
+  font-size: clamp(1.05rem, 2.5vw, 1.15rem) !important;
+  font-weight: 800 !important;
+  color: #60a5fa !important;
+  text-shadow: 0 2px 6px rgba(59, 130, 246, 0.4);
 }
 
 .rating-slider {
@@ -27,51 +34,130 @@
   height: 8px;
   border-radius: 4px;
   outline: none;
-  background: #e5e7eb;
+  background: linear-gradient(
+    to right,
+    #3b82f6 0%,
+    #3b82f6 var(--value, 60%),
+    rgba(148, 163, 184, 0.3) var(--value, 60%),
+    rgba(148, 163, 184, 0.3) 100%
+  );
   cursor: pointer;
   -webkit-appearance: none;
   appearance: none;
+  transition: all 0.2s ease;
+}
+
+.rating-slider:hover {
+  background: linear-gradient(
+    to right,
+    #2563eb 0%,
+    #2563eb var(--value, 60%),
+    rgba(148, 163, 184, 0.4) var(--value, 60%),
+    rgba(148, 163, 184, 0.4) 100%
+  );
 }
 
 .rating-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: clamp(16px, 4vw, 20px);
-  height: clamp(16px, 4vw, 20px);
+  width: clamp(18px, 4vw, 22px);
+  height: clamp(18px, 4vw, 22px);
   border-radius: 50%;
-  background: #3b82f6;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
   cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  box-shadow: 
+    0 4px 8px rgba(59, 130, 246, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transition: all 0.2s ease;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.rating-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 
+    0 6px 12px rgba(59, 130, 246, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.rating-slider::-webkit-slider-thumb:active {
+  transform: scale(1.05);
+}
+
+.rating-slider::-moz-range-thumb {
+  width: clamp(18px, 4vw, 22px);
+  height: clamp(18px, 4vw, 22px);
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  cursor: pointer;
+  box-shadow: 
+    0 4px 8px rgba(59, 130, 246, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transition: all 0.2s ease;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.rating-slider::-moz-range-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 
+    0 6px 12px rgba(59, 130, 246, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.rating-slider::-moz-range-thumb:active {
+  transform: scale(1.05);
 }
 
 .rating-labels {
   display: flex;
   justify-content: space-between;
-  margin-top: 0.25rem;
-  font-size: clamp(0.65rem, 1.8vw, 0.75rem);
-  color: #6b7280;
+  margin-top: 0.5rem;
+  font-size: clamp(0.8rem, 1.8vw, 0.85rem) !important;
+  color: #cbd5e1 !important;
+  font-weight: 600 !important;
 }
 
 /* Tablets */
 @media (max-width: 768px) {
   .rating-container {
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
   }
   
   .rating-header {
     gap: 1rem;
+  }
+
+  .rating-label {
+    font-size: 0.95rem !important;
+  }
+
+  .rating-value {
+    font-size: 1rem !important;
+  }
+
+  .rating-labels {
+    font-size: 0.8rem !important;
   }
 }
 
 /* Phones */
 @media (max-width: 480px) {
   .rating-container {
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
   }
   
   .rating-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.25rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .rating-label {
+    font-size: 0.9rem !important;
+  }
+
+  .rating-value {
+    font-size: 0.95rem !important;
+  }
+
+  .rating-labels {
+    font-size: 0.75rem !important;
   }
 }

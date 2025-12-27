@@ -45,34 +45,16 @@
   font-size: 1.5rem;
 }
 
+/* Right side: Logout + theme toggle */
 .navbar-right {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  justify-content: flex-end;
+  gap: 1rem;
 }
 
-.navbar-campus {
-  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-  color: white;
-  padding: 0.5rem 1.25rem;
-  border-radius: 9999px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3);
-  animation: pulse 2s infinite;
-}
+/* Campus + email classes no longer used and can be deleted */
 
-.navbar-user {
-  color: var(--text-secondary);
-  font-size: 0.875rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  white-space: nowrap;
-}
-
+/* Theme toggle on the far right */
 .navbar-theme-toggle {
   background: var(--bg-secondary);
   border: 2px solid var(--border);
@@ -104,23 +86,12 @@
 @media (max-width: 768px) {
   .navbar-container {
     padding: 0.75rem 1rem;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.75rem;
-  }
-
-  .navbar-right {
-    width: 100%;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
   }
 
   .navbar-brand-text {
     font-size: 1.25rem;
-  }
-
-  .navbar-user {
-    order: 3;
   }
 }
 
@@ -144,11 +115,6 @@
     gap: 0.75rem;
   }
 
-  .navbar-campus {
-    padding: 0.35rem 0.75rem;
-    font-size: 0.75rem;
-  }
-
   .navbar-theme-toggle {
     width: 36px;
     height: 36px;
@@ -159,14 +125,4 @@
     padding: 0.45rem 1rem;
     font-size: 0.8rem;
   }
-
-  .navbar-user {
-    font-size: 0.75rem;
-  }
-}
-
-/* Pulse animation for campus badge */
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
 }
