@@ -11,14 +11,14 @@ export const getAllSubjects = asyncHandler(async (req, res) => {
   // Fetch all subjects
   const subjects = await Subject.find().sort({ name: 1 });
 
-  console.log(`📚 Found ${subjects.length} subjects`);
+  //console.log(`📚 Found ${subjects.length} subjects`);
 
   // For each subject, calculate their average rating
   const subjectsWithRatings = await Promise.all(
     subjects.map(async (subject) => {
       const reviews = await SubjectReview.find({ subjectId: subject._id });
       
-      console.log(`📝 Subject "${subject.name}" has ${reviews.length} reviews`);
+      //console.log(`📝 Subject "${subject.name}" has ${reviews.length} reviews`);
       
       let overallRating = null;
       let reviewCount = reviews.length;
@@ -44,7 +44,7 @@ export const getAllSubjects = asyncHandler(async (req, res) => {
           (categoryAverages.reduce((a, b) => a + b, 0) / categoryAverages.length).toFixed(1)
         );
 
-        console.log(`⭐ Subject "${subject.name}" overall rating: ${overallRating}`);
+        //console.log(`⭐ Subject "${subject.name}" overall rating: ${overallRating}`);
       }
 
       return {
@@ -55,7 +55,7 @@ export const getAllSubjects = asyncHandler(async (req, res) => {
     })
   );
 
-  console.log(`✅ Returning ${subjectsWithRatings.length} subjects with ratings`);
+  //console.log(`✅ Returning ${subjectsWithRatings.length} subjects with ratings`);
 
   return res.json(
     new ApiResponse(200, subjectsWithRatings, "Subjects fetched successfully")
@@ -75,7 +75,7 @@ export const getSubjectById = asyncHandler(async (req, res) => {
   // Calculate ratings for this specific subject
   const reviews = await SubjectReview.find({ subjectId: subject._id });
   
-  console.log(`📝 Subject "${subject.name}" has ${reviews.length} reviews`);
+  //console.log(`📝 Subject "${subject.name}" has ${reviews.length} reviews`);
   
   let overallRating = null;
   let reviewCount = reviews.length;
@@ -101,7 +101,7 @@ export const getSubjectById = asyncHandler(async (req, res) => {
       (categoryAverages.reduce((a, b) => a + b, 0) / categoryAverages.length).toFixed(1)
     );
 
-    console.log(`⭐ Subject "${subject.name}" overall rating: ${overallRating}`);
+    //console.log(`⭐ Subject "${subject.name}" overall rating: ${overallRating}`);
   }
 
   return res.json(
