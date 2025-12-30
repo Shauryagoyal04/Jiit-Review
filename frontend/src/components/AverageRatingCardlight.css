@@ -1,8 +1,9 @@
 /* ============================================
    OPTIMIZED AVERAGE RATING CARD STYLES
-   Reduced animations, same great look
+   Theme-aware with light/dark mode support
    ============================================ */
 
+/* Dark Mode (Default) */
 .avg-card {
   position: relative;
   margin: 2rem 0;
@@ -120,6 +121,123 @@
   font-weight: 700;
   color: #ffffff;
 }
+
+/* ============================================
+   LIGHT MODE OVERRIDES
+   ============================================ */
+
+[data-theme="light"] .avg-card {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border: 1px solid #fbbf24;
+  box-shadow: 0 20px 50px rgba(245, 158, 11, 0.15);
+}
+
+[data-theme="light"] .avg-card::before {
+  background: linear-gradient(180deg, #f59e0b, #d97706, #b45309);
+}
+
+[data-theme="light"] .avg-title {
+  color: #78350f;
+}
+
+[data-theme="light"] .avg-overall {
+  border-bottom: 1px solid rgba(180, 83, 9, 0.2);
+}
+
+[data-theme="light"] .avg-ring {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(217, 119, 6, 0.15));
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.2);
+}
+
+[data-theme="light"] .avg-score {
+  background: linear-gradient(135deg, #d97706, #b45309);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-theme="light"] .avg-outof {
+  color: #92400e;
+}
+
+[data-theme="light"] .avg-item {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #fbbf24;
+}
+
+[data-theme="light"] .avg-item:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: #f59e0b;
+  box-shadow: 0 10px 30px rgba(245, 158, 11, 0.2);
+}
+
+[data-theme="light"] .avg-label {
+  color: #78350f;
+}
+
+[data-theme="light"] .avg-value {
+  color: #92400e;
+}
+
+/* Alternative: Class-based theme system */
+.light-mode .avg-card {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border: 1px solid #fbbf24;
+  box-shadow: 0 20px 50px rgba(245, 158, 11, 0.15);
+}
+
+.light-mode .avg-card::before {
+  background: linear-gradient(180deg, #f59e0b, #d97706, #b45309);
+}
+
+.light-mode .avg-title {
+  color: #78350f;
+}
+
+.light-mode .avg-overall {
+  border-bottom: 1px solid rgba(180, 83, 9, 0.2);
+}
+
+.light-mode .avg-ring {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(217, 119, 6, 0.15));
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.2);
+}
+
+.light-mode .avg-score {
+  background: linear-gradient(135deg, #d97706, #b45309);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.light-mode .avg-outof {
+  color: #92400e;
+}
+
+.light-mode .avg-item {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #fbbf24;
+}
+
+.light-mode .avg-item:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: #f59e0b;
+  box-shadow: 0 10px 30px rgba(245, 158, 11, 0.2);
+}
+
+.light-mode .avg-label {
+  color: #78350f;
+}
+
+.light-mode .avg-value {
+  color: #92400e;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
 
 /* Tablet */
 @media (max-width: 768px) {

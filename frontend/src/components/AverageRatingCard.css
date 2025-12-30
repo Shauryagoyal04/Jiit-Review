@@ -1,30 +1,299 @@
 /* ============================================
-   ENHANCED AVERAGE RATING CARD STYLES
+   ENHANCED TEACHER DETAIL PAGE STYLES
    ============================================ */
-.avg-card {
-  position: relative;
-  margin: 2rem 0;
-  padding: 2rem;
 
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  padding: 3rem;
+}
+
+.backBtn {
+  background-color: transparent;
+  border: none;
+  color: var(--primary);
+  font-size: 0.875rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.backBtn:hover {
+  color: #2563eb;
+  transform: translateX(-4px);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.department {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.reviewBtn {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  border: none;
+  padding: 0.875rem 2rem;
+  border-radius: 12px;
+  font-size: 0.938rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+  transition: all 0.3s ease;
+}
+
+.reviewBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.2);
+}
+
+/* ============================================
+   OVERALL RATING SECTION
+   ============================================ */
+
+/* Dark Mode (Default) */
+.ratingSection {
+  background: linear-gradient(135deg, #374151 0%, #1f2937 100%);
+  border: 1px solid rgba(75, 85, 99, 0.5);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative gradient border on left */
+.ratingSection::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #3b82f6, #8b5cf6, #ec4899);
+  animation: gradientShift 3s ease infinite;
+}
+
+.ratingTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.01em;
+}
+
+.overallRatingBox {
+  background: rgba(59, 130, 246, 0.1);
+  border: 2px solid rgba(59, 130, 246, 0.3);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  min-width: 140px;
+}
+
+.overallScore {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #93c5fd;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.scoreDenominator {
+  color: #9ca3af;
+  font-size: 1.25rem;
+  margin-top: 0.25rem;
+  font-weight: 600;
+}
+
+.ratingGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.ratingCard {
+  background: rgba(55, 65, 81, 0.5);
+  border: 1px solid rgba(75, 85, 99, 0.5);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.ratingCard:hover {
+  background: rgba(55, 65, 81, 0.7);
+  border-color: rgba(75, 85, 99, 0.7);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.ratingLabel {
+  color: #d1d5db;
+  font-size: 0.938rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.ratingValue {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Light Mode Overrides */
+[data-theme="light"] .ratingSection {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border: 1px solid #fbbf24;
+  box-shadow: 0 10px 30px rgba(245, 158, 11, 0.15);
+}
+
+[data-theme="light"] .ratingSection::before {
+  background: linear-gradient(180deg, #f59e0b, #d97706, #b45309);
+}
+
+[data-theme="light"] .ratingTitle {
+  color: #78350f;
+}
+
+[data-theme="light"] .overallRatingBox {
+  background: rgba(245, 158, 11, 0.15);
+  border: 2px solid rgba(245, 158, 11, 0.4);
+}
+
+[data-theme="light"] .overallScore {
+  color: #d97706;
+}
+
+[data-theme="light"] .scoreDenominator {
+  color: #92400e;
+}
+
+
+[data-theme="light"] .ratingCard {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #fbbf24;
+}
+
+[data-theme="light"] .ratingCard:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: #f59e0b;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+}
+
+[data-theme="light"] .ratingLabel {
+  color: #78350f;
+}
+
+[data-theme="light"] .ratingValue {
+  color: #92400e;
+}
+
+/* Alternative: Class-based theme system */
+.light-mode .ratingSection {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border: 1px solid #fbbf24;
+  box-shadow: 0 10px 30px rgba(245, 158, 11, 0.15);
+}
+
+.light-mode .ratingSection::before {
+  background: linear-gradient(180deg, #f59e0b, #d97706, #b45309);
+}
+
+.light-mode .ratingTitle {
+  color: #78350f;
+}
+
+.light-mode .overallRatingBox {
+  background: rgba(245, 158, 11, 0.15);
+  border: 2px solid rgba(245, 158, 11, 0.4);
+}
+
+.light-mode .overallScore {
+  color: #d97706;
+}
+
+.light-mode .scoreDenominator {
+  color: #92400e;
+}
+
+.light-mode .ratingCard {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #fbbf24;
+}
+
+.light-mode .ratingCard:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: #f59e0b;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+}
+
+.light-mode .ratingLabel {
+  color: #78350f;
+}
+
+.light-mode .ratingValue {
+  color: #92400e;
+}
+
+/* ============================================
+   ENHANCED FORM CARD
+   ============================================ */
+
+.formCard {
+  position: relative;
   background: linear-gradient(
     135deg,
-    rgba(30, 41, 59, 0.9),
-    rgba(15, 23, 42, 0.95)
+    rgba(30, 41, 59, 0.95),
+    rgba(15, 23, 42, 0.98)
   );
-
-  border-radius: 20px;
   border: 1px solid rgba(148, 163, 184, 0.2);
-  backdrop-filter: blur(12px);
-
+  border-radius: 24px;
+  padding: 2.5rem;
+  margin-bottom: 2.5rem;
   box-shadow: 
     0 20px 50px rgba(0, 0, 0, 0.5),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  
+  backdrop-filter: blur(12px);
   overflow: hidden;
 }
 
 /* Animated gradient accent border */
-.avg-card::before {
+.formCard::before {
   content: "";
   position: absolute;
   left: 0;
@@ -46,123 +315,125 @@
 }
 
 /* Subtle top-right glow effect */
-.avg-card::after {
+.formCard::after {
   content: "";
   position: absolute;
-  top: -50%;
-  right: -50%;
-  width: 200px;
-  height: 200px;
+  top: -30%;
+  right: -30%;
+  width: 300px;
+  height: 300px;
   background: radial-gradient(
     circle,
-    rgba(59, 130, 246, 0.15),
+    rgba(59, 130, 246, 0.12),
     transparent 70%
   );
   pointer-events: none;
 }
 
-/* Title */
-.avg-title {
-  font-size: 1.1rem;
+/* Form title (if you want to add one) */
+.formCard > h3 {
+  font-size: 1.5rem;
   font-weight: 700;
   color: #f1f5f9;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.75rem;
   letter-spacing: -0.01em;
 }
 
-.avg-overall {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 2rem;
-  margin-bottom: 2rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(148, 163, 184, 0.15);
-}
-
-.avg-ring {
-  position: relative;
-  min-width: 100px;
-  padding: 1.25rem 1.75rem;
-  border-radius: 16px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
+.error {
   background: linear-gradient(
     135deg,
-    rgba(59, 130, 246, 0.15),
-    rgba(139, 92, 246, 0.1)
+    rgba(239, 68, 68, 0.15),
+    rgba(220, 38, 38, 0.1)
   );
-
-  border: 1px solid rgba(59, 130, 246, 0.3);
-  
-  box-shadow: 
-    0 4px 12px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  
-  transition: all 0.3s ease;
-}
-
-.avg-ring:hover {
-  transform: translateY(-2px);
-  box-shadow: 
-    0 6px 16px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
-  border-color: rgba(59, 130, 246, 0.5);
-}
-
-.avg-score {
-  font-size: 2.5rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, #60a5fa, #a78bfa);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  line-height: 1;
-}
-
-.avg-outof {
-  font-size: 0.85rem;
-  color: #94a3b8;
-  font-weight: 600;
-  margin-top: 0.25rem;
-}
-
-/* Grid of ratings */
-.avg-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 1rem;
-}
-
-.avg-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
+  color: #fca5a5;
   padding: 1rem 1.25rem;
-  border-radius: 14px;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  font-weight: 500;
+}
 
+/* ============================================
+   ENHANCED TEXTAREA
+   ============================================ */
+
+.textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 1rem 1.25rem;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  line-height: 1.6;
+  resize: vertical;
+  outline: none;
+  
   background: linear-gradient(
     135deg,
     rgba(51, 65, 85, 0.5),
     rgba(30, 41, 59, 0.5)
   );
-
-  border: 1px solid rgba(148, 163, 184, 0.15);
   
-  position: relative;
-  overflow: hidden;
+  color: #e2e8f0;
   
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Hover shimmer effect */
-.avg-item::before {
+.textarea::placeholder {
+  color: #94a3b8;
+  opacity: 0.8;
+}
+
+.textarea:focus {
+  border-color: rgba(59, 130, 246, 0.5);
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.1),
+    rgba(51, 65, 85, 0.6)
+  );
+  box-shadow: 
+    inset 0 2px 4px rgba(0, 0, 0, 0.2),
+    0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.textarea:hover {
+  border-color: rgba(148, 163, 184, 0.3);
+}
+
+/* ============================================
+   ENHANCED FORM ACTIONS
+   ============================================ */
+
+.formActions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.cancelBtn {
+  flex: 1;
+  background: linear-gradient(
+    135deg,
+    rgba(51, 65, 85, 0.6),
+    rgba(30, 41, 59, 0.6)
+  );
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  color: #e2e8f0;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cancelBtn::before {
   content: "";
   position: absolute;
   top: 0;
@@ -178,102 +449,253 @@
   transition: left 0.5s ease;
 }
 
-.avg-item:hover::before {
+.cancelBtn:hover::before {
   left: 100%;
 }
 
-.avg-item:hover {
-  transform: translateY(-3px);
+.cancelBtn:hover {
   background: linear-gradient(
     135deg,
-    rgba(59, 130, 246, 0.15),
-    rgba(139, 92, 246, 0.1)
+    rgba(71, 85, 105, 0.7),
+    rgba(51, 65, 85, 0.7)
   );
-  border-color: rgba(59, 130, 246, 0.4);
-  box-shadow: 
-    0 10px 30px rgba(59, 130, 246, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border-color: rgba(148, 163, 184, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Label */
-.avg-label {
-  font-size: 0.9rem;
-  color: #cbd5e1;
+.cancelBtn:active {
+  transform: translateY(0);
+}
+
+.submitBtn {
+  flex: 1;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  border: none;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
   font-weight: 600;
-  text-transform: capitalize;
-  letter-spacing: 0.01em;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Value */
-.avg-value {
-  font-size: 1.1rem;
+.submitBtn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.submitBtn:hover::before {
+  left: 100%;
+}
+
+.submitBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.25);
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+}
+
+.submitBtn:active {
+  transform: translateY(0);
+}
+
+.submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.submitBtn:disabled:hover {
+  transform: none;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+/* ============================================
+   REVIEWS SECTION
+   ============================================ */
+
+.reviewsSection {
+  margin-top: 3rem;
+}
+
+.reviewsTitle {
+  font-size: 1.75rem;
   font-weight: 700;
-  color: #ffffff;
-  text-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
 }
 
-/* Tablet */
+.noReviews {
+  text-align: center;
+  color: var(--text-secondary);
+  padding: 3rem 1rem;
+  background: linear-gradient(
+    135deg,
+    rgba(51, 65, 85, 0.4),
+    rgba(30, 41, 59, 0.4)
+  );
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  border-radius: 16px;
+  font-size: 1rem;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
 @media (max-width: 768px) {
-  .avg-card {
-    padding: 1.5rem;
+  .container {
+    padding: 1.5rem 1rem;
   }
 
-  .avg-ring {
-    min-width: 90px;
-    padding: 1rem 1.5rem;
-  }
-
-  .avg-score {
-    font-size: 2.25rem;
-  }
-
-  .avg-overall {
+  .header {
+    flex-direction: column;
     gap: 1.5rem;
   }
 
-  .avg-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Mobile */
-@media (max-width: 480px) {
-  .avg-card {
-    padding: 1.25rem;
-  }
-
-  .avg-title {
-    font-size: 1rem;
-  }
-
-  .avg-ring {
-    min-width: 80px;
-    padding: 0.85rem 1.25rem;
-  }
-
-  .avg-score {
+  .title {
     font-size: 2rem;
   }
 
-  .avg-overall {
-    gap: 1.25rem;
-    padding-bottom: 1.5rem;
+  .reviewBtn {
+    width: 100%;
+    padding: 1rem;
   }
 
-  .avg-grid {
-    grid-template-columns: 1fr 1fr;
+  /* Rating Section Responsive */
+  .ratingSection {
+    padding: 1.5rem;
+  }
+
+  .ratingTitle {
+    font-size: 1.25rem;
+  }
+
+  .overallRatingBox {
+    padding: 1.25rem;
+    min-width: 120px;
+  }
+
+  .overallScore {
+    font-size: 3rem;
+  }
+
+  .scoreDenominator {
+    font-size: 1.125rem;
+  }
+
+  .ratingGrid {
+    grid-template-columns: 1fr;
     gap: 0.75rem;
   }
 
-  .avg-item {
-    padding: 0.85rem 1rem;
+  .ratingCard {
+    padding: 0.875rem 1rem;
   }
 
-  .avg-label {
-    font-size: 0.8rem;
+  .ratingLabel {
+    font-size: 0.875rem;
   }
 
-  .avg-value {
+  .ratingValue {
+    font-size: 1.125rem;
+  }
+
+  .formCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .formActions {
+    flex-direction: column;
+  }
+
+  .cancelBtn,
+  .submitBtn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem 0.75rem;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .department {
     font-size: 1rem;
+  }
+
+  /* Rating Section Mobile */
+  .ratingSection {
+    padding: 1.25rem;
+    border-radius: 16px;
+  }
+
+  .ratingTitle {
+    font-size: 1.125rem;
+  }
+
+  .overallRatingBox {
+    padding: 1rem;
+    min-width: 100px;
+  }
+
+  .overallScore {
+    font-size: 2.5rem;
+  }
+
+  .scoreDenominator {
+    font-size: 1rem;
+  }
+
+  .ratingCard {
+    padding: 0.75rem 0.875rem;
+  }
+
+  .ratingLabel {
+    font-size: 0.813rem;
+  }
+
+  .ratingValue {
+    font-size: 1rem;
+  }
+
+  .formCard {
+    padding: 1.5rem 1.25rem;
+    border-radius: 20px;
+  }
+
+  .textarea {
+    padding: 0.875rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .cancelBtn,
+  .submitBtn {
+    padding: 0.875rem 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  .reviewsTitle {
+    font-size: 1.5rem;
   }
 }

@@ -6,85 +6,112 @@ import { asyncHandler } from "../utils/asyncHandler.js";
 
 /* =========================
    GET ALL SUBJECTS (PUBLIC)
-   GET /api/subjects
-   Optional filters: semester, type
 ========================= */
 export const getAllSubjects = asyncHandler(async (req, res) => {
-  const { semester, type } = req.query;
+  // Fetch all subjects
+  const subjects = await Subject.find().sort({ name: 1 });
 
-  const filter = {};
-  if (semester) filter.semester = Number(semester);
-  if (type) filter.type = type;
+  console.log(`📚 Found ${subjects.length} subjects`);
 
-  const subjects = await Subject.find(filter).sort({
-    semester: 1,
-    name: 1
-  });
+  // For each subject, calculate their average rating
+  const subjectsWithRatings = await Promise.all(
+    subjects.map(async (subject) => {
+      const reviews = await SubjectReview.find({ subjectId: subject._id });
+      
+      console.log(`📝 Subject "${subject.name}" has ${reviews.length} reviews`);
+      
+      let overallRating = null;
+      let reviewCount = reviews.length;
+
+      if (reviews.length > 0) {
+        // Calculate totals for all rating categories
+        const totals = reviews.reduce((acc, review) => {
+          Object.keys(review.ratings).forEach(key => {
+            acc[key] = (acc[key] || 0) + review.ratings[key];
+          });
+          return acc;
+        }, {});
+
+        // Calculate average for each category
+        const avgRatings = {};
+        Object.keys(totals).forEach(key => {
+          avgRatings[key] = totals[key] / reviews.length;
+        });
+
+        // Calculate overall rating (average of all category averages)
+        const categoryAverages = Object.values(avgRatings);
+        overallRating = Number(
+          (categoryAverages.reduce((a, b) => a + b, 0) / categoryAverages.length).toFixed(1)
+        );
+
+        console.log(`⭐ Subject "${subject.name}" overall rating: ${overallRating}`);
+      }
+
+      return {
+        ...subject.toObject(),
+        overallRating,
+        reviewCount
+      };
+    })
+  );
+
+  console.log(`✅ Returning ${subjectsWithRatings.length} subjects with ratings`);
 
   return res.json(
-    new ApiResponse(200, subjects, "Subjects fetched successfully")
+    new ApiResponse(200, subjectsWithRatings, "Subjects fetched successfully")
   );
 });
 
-
+/* =========================
+   GET SUBJECT BY ID (PUBLIC)
+========================= */
 export const getSubjectById = asyncHandler(async (req, res) => {
-  const { id } = req.params;
+  const subject = await Subject.findById(req.params.id);
 
-  // Find subject
-  const subject = await Subject.findById(id);
   if (!subject) {
     throw new ApiError(404, "Subject not found");
   }
 
-  // Optionally, include reviews and avg ratings
-  const reviews = await SubjectReview.find({ subjectId: id });
-
-  let avgRatings = null;
+  // Calculate ratings for this specific subject
+  const reviews = await SubjectReview.find({ subjectId: subject._id });
+  
+  console.log(`📝 Subject "${subject.name}" has ${reviews.length} reviews`);
+  
   let overallRating = null;
+  let reviewCount = reviews.length;
 
   if (reviews.length > 0) {
-    const totals = {
-      difficulty: 0,
-      content: 0,
-      examPattern: 0,
-      relativeMarks: 0
-    };
+    // Calculate totals for all rating categories
+    const totals = reviews.reduce((acc, review) => {
+      Object.keys(review.ratings).forEach(key => {
+        acc[key] = (acc[key] || 0) + review.ratings[key];
+      });
+      return acc;
+    }, {});
 
-    reviews.forEach((r) => {
-      totals.difficulty += r.ratings.difficulty;
-      totals.content += r.ratings.content;
-      totals.examPattern += r.ratings.examPattern;
-      totals.relativeMarks += r.ratings.relativeMarks;
+    // Calculate average for each category
+    const avgRatings = {};
+    Object.keys(totals).forEach(key => {
+      avgRatings[key] = totals[key] / reviews.length;
     });
 
-    avgRatings = {
-      difficulty: parseFloat((totals.difficulty / reviews.length).toFixed(1)),
-      content: parseFloat((totals.content / reviews.length).toFixed(1)),
-      examPattern: parseFloat((totals.examPattern / reviews.length).toFixed(1)),
-      relativeMarks: parseFloat((totals.relativeMarks / reviews.length).toFixed(1))
-    };
+    // Calculate overall rating (average of all category averages)
+    const categoryAverages = Object.values(avgRatings);
+    overallRating = Number(
+      (categoryAverages.reduce((a, b) => a + b, 0) / categoryAverages.length).toFixed(1)
+    );
 
-    // Calculate overall rating (average of all 4 ratings)
-    overallRating = parseFloat((
-      (avgRatings.difficulty + avgRatings.content + avgRatings.examPattern + avgRatings.relativeMarks) / 4
-    ).toFixed(1));
+    console.log(`⭐ Subject "${subject.name}" overall rating: ${overallRating}`);
   }
 
-  return res.status(200).json(
-    new ApiResponse(200, {
-      subject,
-      reviewsCount: reviews.length,
-      avgRatings,
-      overallRating,
-      reviews
-    }, "Subject fetched successfully")
+  return res.json(
+    new ApiResponse(200, { ...subject.toObject(), overallRating, reviewCount }, "Subject fetched successfully")
   );
 });
+
 /* =========================
    GET SUBJECT REVIEWS (🔒)
-   GET /api/subjects/:id/reviews
 ========================= */
-
 export const getSubjectReviews = asyncHandler(async (req, res) => {
   const subjectId = req.params.id;
 
@@ -100,64 +127,54 @@ export const getSubjectReviews = asyncHandler(async (req, res) => {
   let overallRating = null;
 
   if (reviews.length > 0) {
-    const totals = {
-      difficulty: 0,
-      content: 0,
-      examPattern: 0,
-      relativeMarks: 0
-    };
+    // Calculate totals for all rating categories dynamically
+    const totals = reviews.reduce((acc, review) => {
+      Object.keys(review.ratings).forEach(key => {
+        acc[key] = (acc[key] || 0) + review.ratings[key];
+      });
+      return acc;
+    }, {});
 
-    reviews.forEach((r) => {
-      totals.difficulty += r.ratings.difficulty;
-      totals.content += r.ratings.content;
-      totals.examPattern += r.ratings.examPattern;
-      totals.relativeMarks += r.ratings.relativeMarks;
+    // Calculate average for each category
+    avgRatings = {};
+    Object.keys(totals).forEach(key => {
+      avgRatings[key] = Number((totals[key] / reviews.length).toFixed(1));
     });
 
-    avgRatings = {
-      difficulty: parseFloat((totals.difficulty / reviews.length).toFixed(1)),
-      content: parseFloat((totals.content / reviews.length).toFixed(1)),
-      examPattern: parseFloat((totals.examPattern / reviews.length).toFixed(1)),
-      relativeMarks: parseFloat((totals.relativeMarks / reviews.length).toFixed(1))
-    };
-
-    // Calculate overall rating (average of all 4 ratings)
-    overallRating = parseFloat((
-      (avgRatings.difficulty + avgRatings.content + avgRatings.examPattern + avgRatings.relativeMarks) / 4
-    ).toFixed(1));
+    // Calculate overall rating (average of all category averages)
+    const categoryAverages = Object.values(avgRatings);
+    overallRating = Number(
+      (categoryAverages.reduce((a, b) => a + b, 0) / categoryAverages.length).toFixed(1)
+    );
   }
 
   return res.json(
     new ApiResponse(
-      200,
-      {
-        reviewsCount: reviews.length,
-        avgRatings,
-        overallRating,
-        reviews
-      },
+      200, 
+      { reviewsCount: reviews.length, avgRatings, overallRating, reviews }, 
       "Subject reviews fetched successfully"
     )
   );
 });
+
 /* =========================
    ADD SUBJECT REVIEW (🔒)
-   POST /api/subjects/:id/reviews
 ========================= */
 export const addSubjectReview = asyncHandler(async (req, res) => {
   const subjectId = req.params.id;
   const userId = req.user._id;
 
-  const { difficulty, content, examPattern, relativeMarks, textReview } =
-    req.body;
+  const { ratings, textReview } = req.body;
 
-  if (
-    !difficulty ||
-    !content ||
-    !examPattern ||
-    !relativeMarks
-  ) {
-    throw new ApiError(400, "All rating fields are required");
+  // Validate that ratings exist and are objects
+  if (!ratings || typeof ratings !== 'object') {
+    throw new ApiError(400, "Ratings object is required");
+  }
+
+  // Validate all ratings are between 1 and 5
+  const ratingValues = Object.values(ratings);
+  if (ratingValues.some((r) => r < 1 || r > 5)) {
+    throw new ApiError(400, "All ratings must be between 1 and 5");
   }
 
   const subject = await Subject.findById(subjectId);
@@ -165,6 +182,7 @@ export const addSubjectReview = asyncHandler(async (req, res) => {
     throw new ApiError(404, "Subject not found");
   }
 
+  // 🚫 Prevent duplicate review
   const existingReview = await SubjectReview.findOne({
     subjectId,
     userId
@@ -177,12 +195,7 @@ export const addSubjectReview = asyncHandler(async (req, res) => {
   const review = await SubjectReview.create({
     subjectId,
     userId,
-    ratings: {
-      difficulty,
-      content,
-      examPattern,
-      relativeMarks
-    },
+    ratings,
     textReview
   });
 

@@ -39,16 +39,17 @@ const SubjectDetail = () => {
   const fetchSubjectData = async () => {
     try {
       const subjectRes = await api.get(`/subjects/${id}`);
-      setSubject(subjectRes.data.data.subject);
+      const subjectData = subjectRes.data.data || subjectRes.data;
+      setSubject(subjectData);
 
       const reviewsRes = await api.get(`/subjects/${id}/reviews`);
-      const data = reviewsRes.data.data;
+      const reviewData = reviewsRes.data.data || reviewsRes.data;
       
-      setReviews(data.reviews);
-      setAvgRatings(data.avgRatings);
-      setOverallRating(data.overallRating);
+      setReviews(reviewData.reviews || []);
+      setAvgRatings(reviewData.avgRatings);
+      setOverallRating(reviewData.overallRating);
 
-      const userReview = data.reviews.find(
+      const userReview = (reviewData.reviews || []).find(
         r => r.userId && r.userId.toString() === user?._id?.toString()
       );
       setHasReviewed(!!userReview);
@@ -70,11 +71,14 @@ const SubjectDetail = () => {
     setError('');
 
     try {
+      // Backend expects ratings in a 'ratings' object
       await api.post(`/subjects/${id}/reviews`, {
-        difficulty: formData.difficulty,
-        content: formData.content,
-        examPattern: formData.examPattern,
-        relativeMarks: formData.relativeMarks,
+        ratings: {
+          difficulty: formData.difficulty,
+          content: formData.content,
+          examPattern: formData.examPattern,
+          relativeMarks: formData.relativeMarks
+        },
         textReview: formData.textReview
       });
 

@@ -55,16 +55,26 @@ const Dashboard = () => {
     }
   };
 
-  const calculateAvgRating = (reviews) => {
-    if (!reviews || reviews.length === 0) return 'N/A';
+  // Updated function to handle the new backend response structure
+  const calculateAvgRating = (item) => {
+    // Check if backend sent overallRating directly
+    if (item && item.overallRating) {
+      return item.overallRating;
+    }
+    return 'N/A';
+  };
 
-    const sum = reviews.reduce((acc, review) => {
-      const ratings = Object.values(review.ratings);
-      const avg = ratings.reduce((a, b) => a + b, 0) / ratings.length;
-      return acc + avg;
-    }, 0);
-
-    return (sum / reviews.length).toFixed(1);
+  // Updated function to get review count
+  const getReviewCount = (item) => {
+    // Check if backend sent reviewCount directly
+    if (item && typeof item.reviewCount === 'number') {
+      return item.reviewCount;
+    }
+    // Fallback to reviews array length
+    if (item && item.reviews && Array.isArray(item.reviews)) {
+      return item.reviews.length;
+    }
+    return 0;
   };
 
   // --------- FILTERING ----------
@@ -277,11 +287,11 @@ const Dashboard = () => {
                       </p>
                     </div>
                     <div className="dashboard-rating-badge">
-                      ⭐ {calculateAvgRating(teacher.reviews)}
+                      ⭐ {calculateAvgRating(teacher)}
                     </div>
                   </div>
                   <p className="dashboard-review-count">
-                    📝 {teacher.reviews?.length || 0} reviews
+                    📝 {getReviewCount(teacher)} reviews
                   </p>
                 </div>
               ))
@@ -321,11 +331,11 @@ const Dashboard = () => {
                       </p>
                     </div>
                     <div className="dashboard-rating-badge">
-                      ⭐ {calculateAvgRating(subject.reviews)}
+                      ⭐ {calculateAvgRating(subject)}
                     </div>
                   </div>
                   <p className="dashboard-review-count">
-                    📝 {subject.reviews?.length || 0} reviews
+                    📝 {getReviewCount(subject)} reviews
                   </p>
                 </div>
               ))

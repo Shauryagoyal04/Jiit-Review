@@ -1,7 +1,8 @@
 /* ============================================
-   REVIEW CARD STYLES
+   REVIEW CARD STYLES - Theme-aware
    ============================================ */
 
+/* Dark Mode (Default) */
 .review-card {
   width: 100% !important;
   margin-bottom: 1.25rem !important;
@@ -127,6 +128,133 @@
   font-style: italic !important;
   opacity: 0.8;
 }
+
+/* ============================================
+   LIGHT MODE OVERRIDES
+   ============================================ */
+
+[data-theme="light"] .review-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(254, 252, 232, 0.8)
+  ) !important;
+  border: 1px solid #fbbf24 !important;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.15) !important;
+}
+
+[data-theme="light"] .review-card::before {
+  background: linear-gradient(
+    180deg,
+    rgba(245, 158, 11, 0.7),
+    rgba(217, 119, 6, 0.7)
+  );
+}
+
+[data-theme="light"] .review-card:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(254, 243, 199, 0.95),
+    rgba(253, 230, 138, 0.9)
+  ) !important;
+  border-color: #f59e0b !important;
+  box-shadow: 
+    0 8px 24px rgba(245, 158, 11, 0.2),
+    0 0 0 1px rgba(245, 158, 11, 0.3) !important;
+}
+
+[data-theme="light"] .review-header {
+  border-bottom: 1px solid rgba(180, 83, 9, 0.15) !important;
+}
+
+[data-theme="light"] .review-anonymous {
+  color: #78350f !important;
+}
+
+[data-theme="light"] .review-anonymous:hover {
+  color: #92400e !important;
+}
+
+[data-theme="light"] .review-anonymous::before {
+  background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+}
+
+[data-theme="light"] .review-date {
+  color: #92400e !important;
+}
+
+[data-theme="light"] .review-text {
+  color: #1c1917 !important;
+}
+
+[data-theme="light"] .review-text.muted {
+  color: #78350f !important;
+  opacity: 0.7;
+}
+
+/* Alternative: Class-based theme system */
+.light-mode .review-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(254, 252, 232, 0.8)
+  ) !important;
+  border: 1px solid #fbbf24 !important;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.15) !important;
+}
+
+.light-mode .review-card::before {
+  background: linear-gradient(
+    180deg,
+    rgba(245, 158, 11, 0.7),
+    rgba(217, 119, 6, 0.7)
+  );
+}
+
+.light-mode .review-card:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(254, 243, 199, 0.95),
+    rgba(253, 230, 138, 0.9)
+  ) !important;
+  border-color: #f59e0b !important;
+  box-shadow: 
+    0 8px 24px rgba(245, 158, 11, 0.2),
+    0 0 0 1px rgba(245, 158, 11, 0.3) !important;
+}
+
+.light-mode .review-header {
+  border-bottom: 1px solid rgba(180, 83, 9, 0.15) !important;
+}
+
+.light-mode .review-anonymous {
+  color: #78350f !important;
+}
+
+.light-mode .review-anonymous:hover {
+  color: #92400e !important;
+}
+
+.light-mode .review-anonymous::before {
+  background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+}
+
+.light-mode .review-date {
+  color: #92400e !important;
+}
+
+.light-mode .review-text {
+  color: #1c1917 !important;
+}
+
+.light-mode .review-text.muted {
+  color: #78350f !important;
+  opacity: 0.7;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
 
 /* Tablet */
 @media (max-width: 768px) {
