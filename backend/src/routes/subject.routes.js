@@ -4,7 +4,8 @@ import {
   getAllSubjects,
   getSubjectById,
   getSubjectReviews,
-  addSubjectReview
+  addSubjectReview,
+  deleteSubjectReview
 } from "../controllers/subject.controller.js";
 
 const router = Router();
@@ -15,5 +16,10 @@ router.get("/:id", getSubjectById);
 // Protected
 router.get("/:id/reviews", verifyJWT, getSubjectReviews);
 router.post("/:id/reviews", verifyJWT, addSubjectReview);
+router.delete(
+  "/:subjectId/reviews/:reviewId",
+  verifyJWT,
+  deleteSubjectReview
+);
 
 export default router;

@@ -190,3 +190,31 @@ export const addSubjectReview = asyncHandler(async (req, res) => {
     new ApiResponse(201, review, "Subject review added successfully")
   );
 });
+/* =========================
+   DELETE SUBJECT REVIEW (🔒)
+   DELETE /api/subjects/:subjectId/reviews/:reviewId
+========================= */
+export const deleteSubjectReview = asyncHandler(async (req, res) => {
+  const { subjectId, reviewId } = req.params;
+  const userId = req.user._id;
+
+  const subject = await Subject.findById(subjectId);
+  if (!subject) {
+    throw new ApiError(404, "Subject not found");
+  }
+
+  const review = await SubjectReview.findById(reviewId);
+  if (!review) {
+    throw new ApiError(404, "Review not found");
+  }
+
+  if (review.userId.toString() !== userId.toString()) {
+    throw new ApiError(403, "You are not allowed to delete this review");
+  }
+
+  await review.deleteOne();
+
+  return res.json(
+    new ApiResponse(200, null, "Subject review deleted successfully")
+  );
+});

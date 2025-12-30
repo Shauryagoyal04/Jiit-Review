@@ -4,7 +4,8 @@ import {
   getAllTeachers,
   getTeacherById,
   getTeacherReviews,
-  addTeacherReview
+  addTeacherReview, 
+  deleteTeacherReview
 } from "../controllers/teacher.controller.js";
 
 const router = Router();
@@ -15,5 +16,9 @@ router.get("/:id", getTeacherById);
 // Protected – reviews
 router.get("/:id/review", verifyJWT, getTeacherReviews);
 router.post("/:id/review", verifyJWT, addTeacherReview);
-
+router.delete(
+  "/:teacherId/review/:reviewId",
+  verifyJWT,
+  deleteTeacherReview
+);
 export default router;

@@ -115,3 +115,35 @@ export const addTeacherReview = asyncHandler(async (req, res) => {
     new ApiResponse(201, review, "Teacher review added successfully")
   );
 });
+
+/* =========================
+   DELETE TEACHER REVIEW (🔒)
+   DELETE /api/teachers/:teacherId/review/:reviewId
+========================= */
+export const deleteTeacherReview = asyncHandler(async (req, res) => {
+  const { teacherId, reviewId } = req.params;
+  const userId = req.user._id;
+
+  // Check teacher exists
+  const teacher = await Teacher.findById(teacherId);
+  if (!teacher) {
+    throw new ApiError(404, "Teacher not found");
+  }
+
+  // Find review
+  const review = await TeacherReview.findById(reviewId);
+  if (!review) {
+    throw new ApiError(404, "Review not found");
+  }
+
+  // Ownership check
+  if (review.userId.toString() !== userId.toString()) {
+    throw new ApiError(403, "You are not allowed to delete this review");
+  }
+
+  await review.deleteOne();
+
+  return res.json(
+    new ApiResponse(200, null, "Teacher review deleted successfully")
+  );
+});

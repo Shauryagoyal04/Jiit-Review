@@ -6,6 +6,7 @@ import { asyncHandler } from "../utils/asyncHandler.js";
 import {User} from "../models/user.model.js";
 import sendEmail from "../utils/sendEmail.js";
 import { generateResetToken } from "../utils/generateResetToken.js";
+import crypto from "crypto";
 /* =========================
    REGISTER
 ========================= */
@@ -171,7 +172,7 @@ export const forgotPassword = asyncHandler(async (req, res) => {
   }
 
   const user = await User.findOne({ email });
-
+  //console.log("User found for password reset:", user);
   // ✅ Always return success (prevents email enumeration)
   if (!user) {
     return res.json(
@@ -184,32 +185,37 @@ export const forgotPassword = asyncHandler(async (req, res) => {
 
   user.resetPasswordToken = hashedToken;
   user.resetPasswordExpire = Date.now() + 15 * 60 * 1000; // 15 minutes
-
+  //console.log("Reset Token:", resetToken);
   await user.save({ validateBeforeSave: false });
 
   const resetUrl = `${process.env.FRONTEND_URL}/reset-password/${resetToken}`;
 
   const message = `
-Hello ${user.name || "User"},
-
-You requested a password reset.
-
-Click the link below to reset your password:
-${resetUrl}
-
-This link will expire in 15 minutes.
-
-If you did not request this, please ignore this email.
-
-Thanks,
-JIIT Reviews Team
+  <div style="font-family: Arial, sans-serif; padding: 20px;">
+    <h2>Password Reset Request</h2>
+    <p>Hello ${user.name || "User"},</p>
+    <p>You requested a password reset.</p>
+    <p>Click the link below to reset your password:</p>
+    <a href="${resetUrl}" style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; margin: 10px 0;">Reset Password</a>
+    <p>Or copy and paste this link in your browser:</p>
+    <p style="word-break: break-all;">${resetUrl}</p>
+    <p><strong>This link will expire in 15 minutes.</strong></p>
+    <p>If you did not request this, please ignore this email.</p>
+    <br>
+    <p>Thanks,<br>JIIT Reviews Team</p>
+  </div>
 `;
-
+  // console.log({
+  //   resetPasswordToken: user.resetPasswordToken,
+  //   resetPasswordExpire: user.resetPasswordExpire
+  // });
   try {
+    //console.log("📧 Sending reset email to:", user.email);
+
     await sendEmail({
       to: user.email,
       subject: "Password Reset Request",
-      text: message
+      html: message
     });
 
     return res.json(
@@ -233,7 +239,7 @@ export const resetPassword = asyncHandler(async (req, res) => {
   if (!password) {
     throw new ApiError(400, "Password is required");
   }
-
+  const hashedPassword = await bcrypt.hash(password, 10);
   const hashedToken = crypto
     .createHash("sha256")
     .update(token)
@@ -248,7 +254,7 @@ export const resetPassword = asyncHandler(async (req, res) => {
     throw new ApiError(400, "Invalid or expired token");
   }
 
-  user.password = password;
+  user.password = hashedPassword;
   user.resetPasswordToken = undefined;
   user.resetPasswordExpire = undefined;
 

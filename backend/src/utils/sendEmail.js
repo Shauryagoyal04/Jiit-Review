@@ -3,6 +3,8 @@ import ApiError from "./ApiError.js";
 
 const sendEmail = async ({ to, subject, html }) => {
   try {
+    //console.log("📨 sendEmail called");
+
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
